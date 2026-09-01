@@ -20,8 +20,8 @@ const socialItems = [
 const Header = () => {
     return (
         <>
-            <div className='w-full h-[50px] flex  space-between'>
-                <div className=''>
+            <div className="w-full h-[50px] flex items-center justify-between">
+                <div>
                     A
                 </div>
 
@@ -30,15 +30,12 @@ const Header = () => {
                 </div>
 
                 <div className="font-medium text-[18px] leading-[26px] text-[#030303]">
-
                     Email: info@example.com
                 </div>
 
                 <div>
                     <Button />
                 </div>
-
-
             </div>
             {/* <div >
                 <StaggeredMenu
