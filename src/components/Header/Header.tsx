@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react";
 import Button from "../Button";
 import StaggeredMenu from "../StaggeredMenu";
 
@@ -17,27 +18,46 @@ const socialItems = [
 ];
 
 
+
 const Header = () => {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 10);
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
     return (
-        <>
-            <div className="w-full h-[50px] flex items-center justify-between">
-                <div>
-                    A
+        <header
+            className={
+                `fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white ${scrolled && `shadow - [0_1px_0_0_rgba(0, 0, 0, 0.06)]`} `
+
+
+            }
+        >
+            <div className="w-full  flex items-center justify-between">
+                <div className="container-fluid flex items-center  justify-between h-19">
+                    <div className="font-bold text-4xl">
+                        ANAS.
+                    </div>
+                    <div className="font-medium text-[18px] leading-[26px] text-[#030303]">
+                        Based on California, USA
+                    </div>
+
+                    <div className="font-medium text-[18px] leading-[26px] text-[#030303]">
+                        Email: info@example.com
+                    </div>
+
+                    <div>
+                        <Button />
+                    </div>
                 </div>
 
-                <div className="font-medium text-[18px] leading-[26px] text-[#030303]">
-                    Based on California, USA
-                </div>
 
-                <div className="font-medium text-[18px] leading-[26px] text-[#030303]">
-                    Email: info@example.com
-                </div>
 
-                <div>
-                    <Button />
-                </div>
+
             </div>
-            {/* <div >
+            <div >
                 <StaggeredMenu
                     position="right"
                     items={menuItems}
@@ -53,8 +73,8 @@ const Header = () => {
                     onMenuOpen={() => console.log('Menu opened')}
                     onMenuClose={() => console.log('Menu closed')}
                 />
-            </div> */}
-        </>
+            </div>
+        </header >
     )
 }
 
