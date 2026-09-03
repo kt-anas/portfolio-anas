@@ -18,8 +18,8 @@ export default function Button() {
         whitespace-nowrap
       "
         >
-            <span className="text-[18px]">→</span>
-            <span>LET’S TALK</span>
+            <span className="flex justify-center">LET’S TALK <span className=" flex text-[28px]">→</span></span>
+
         </button>
     );
 }

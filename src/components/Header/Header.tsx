@@ -40,11 +40,14 @@ const Header = () => {
                     <div className="font-bold text-4xl">
                         ANAS.
                     </div>
-                    <div className="font-medium text-[18px] leading-[26px] text-[#030303]">
+                    <div className="h-[38px] px-5 rounded-full border border-[#e5e5e5] flex items-center gap-2 text-[14px] font-medium text-[18px] leading-[26px] text-[#030303]  hover:border-black transition-all ">
                         Based on California, USA
                     </div>
 
-                    <div className="font-medium text-[18px] leading-[26px] text-[#030303]">
+
+
+                    <div className="h-[38px] px-5 rounded-full border border-[#e5e5e5] flex items-center gap-2 text-[14px] font-medium text-[18px] leading-[26px] text-[#030303]  hover:border-black transition-all ">
+
                         Email: info@example.com
                     </div>
 
@@ -57,7 +60,7 @@ const Header = () => {
 
 
             </div>
-            <div >
+            {/* <div >
                 <StaggeredMenu
                     position="right"
                     items={menuItems}
@@ -73,7 +76,7 @@ const Header = () => {
                     onMenuOpen={() => console.log('Menu opened')}
                     onMenuClose={() => console.log('Menu closed')}
                 />
-            </div>
+            </div> */}
         </header >
     )
 }
