@@ -11,7 +11,7 @@ const HeroSection = () => {
                 </p>
 
                 {/* Heading */}
-                <h1 className="mt-5 text-[90px] leading-[0.95] font-medium tracking-[-4px]">
+                <h1 className="mt-5 text-[100px] leading-[1] font-medium tracking-[-4px]">
                     FRONT-END
                     <br />
                     DEVELOPER &

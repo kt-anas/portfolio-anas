@@ -1,11 +1,11 @@
 import HeroSection from '@/src/components/HeroSection'
-import ChooseYourPlan from '../components/ChooseYourPlan'
+import WorkSection from '../components/WorkSection'
 
 const HomePage = () => {
     return (
         <div>
             <HeroSection />
-            <ChooseYourPlan />
+            <WorkSection />
         </div>
     )
 }

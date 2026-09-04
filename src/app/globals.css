@@ -16,6 +16,8 @@
     /* Typography */
 
     --font-space-grotesk: "Space Grotesk", sans-serif;
+    --font-primary: var(--font-space-grotesk);
+    --font-secondary: var(--font-space-grotesk);
 
     --color-text-primary: #0d0d0d;
     --color-text-secondary: #333333;
