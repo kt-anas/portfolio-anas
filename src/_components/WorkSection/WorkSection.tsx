@@ -1,12 +1,8 @@
-import React from 'react'
+
 import { ReactLenis } from 'lenis/react';
 const WorkSection = () => {
     return (
         <ReactLenis root>
-
-
-
-
             <section className=' w-full bg-white  '>
                 <div className='container grid grid-cols-2 px-8'>
                     <div className='sticky top-0 h-screen grid place-content-start'>

@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Button from "../Button";
-import MenuOverlay from "../MenuOverlay";
 
 
 const Header = () => {
@@ -33,33 +32,26 @@ const Header = () => {
                             Based on California, USA
                         </div>
 
-
-
                         <div className="h-[38px] px-5 rounded-full border border-[#e5e5e5] flex items-center gap-2 text-[14px] font-medium text-[18px] leading-[26px] text-[#030303]  hover:border-black transition-all ">
 
                             Email: info@example.com
                         </div>
+                        <div>
+                            <Button />
+                        </div>
                         <button
-                            onClick={() => setMenuOpen(true)}
+
                             className="w-12 h-12 rounded-full border flex items-center justify-center"
                         >
                             <span className="text-xl">☰</span>
                         </button>
-                        <div>
-                            <Button />
-                        </div>
                     </div>
-
-
 
 
                 </div>
 
             </header >
-            <MenuOverlay
-                open={menuOpen}
-                onClose={() => setMenuOpen(false)}
-            />
+
         </>
     )
 }
