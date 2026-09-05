@@ -1,14 +1,11 @@
 'use client';
 
 import { useRef } from 'react';
-
 import { motion } from 'framer-motion';
-
-import { MagneticButton } from '@/components';
-import { useOffcanvasToggle } from '@/hooks';
-import { cn } from '@/utils';
-
 import classes from './index.module.css';
+import { useOffcanvasToggle } from '@/src/_hooks/use-offcanvas-toggle';
+import { MagneticButton } from '@/src/_components/FlotButton/magnetic';
+import { cn } from '@/src/_utils';
 
 /**
  * @param {Object} props
@@ -43,6 +40,7 @@ export function OffcanvasToggle({ isOpen, handleOpen }) {
                 <span
                     className={cn([classes.burger], [isOpen && classes.burgerActive])}
                 />
+
                 <span className='sr-only focus:not-sr-only'>Offcanvas Toggle</span>
             </MagneticButton>
         </motion.div>

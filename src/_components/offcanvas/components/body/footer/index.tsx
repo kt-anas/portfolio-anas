@@ -1,10 +1,9 @@
 'use client';
 
 import Link from 'next/link';
-
-import { MagneticButton } from '@/components';
-import { socialMedias } from '@/data';
-import { randomId } from '@/utils';
+import { MagneticButton } from '@/src/_components/FlotButton';
+import { socialMedias } from '@/src/_data';
+import { randomId } from '@/src/_utils';
 
 export function OffcanvasFooter() {
     const medias = socialMedias.map(({ href, title }) => {

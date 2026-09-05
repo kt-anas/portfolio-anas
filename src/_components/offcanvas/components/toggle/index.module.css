@@ -2,43 +2,44 @@
   position: fixed;
   top: 0;
   right: 0;
-  margin: theme(margin.6);
-  z-index: theme(zIndex.40);
+  margin: 1.5rem;
+  z-index: 40;
 }
 
 .burger {
-  display: inherit;
-  width: theme(width.8);
-  height: theme(height.4);
-
-  &::after,
-  &::before {
-    width: 100%;
-    height: 2px;
-    content: '';
-    position: absolute;
-    display: block;
-    background-color: theme(colors.background);
-    transition: transform 300ms theme(transitionTimingFunction.in-expo);
-  }
-
-  &::before {
-    top: 0;
-  }
-
-  &::after {
-    bottom: 0;
-  }
+  position: relative;
+  display: block;
+  width: 2rem;
+  height: 1rem;
+  background: transparent;
 }
 
-.burgerActive {
-  &::before {
-    transform: rotate(-45deg);
-    top: 50%;
-  }
+.burger::before,
+.burger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 9999px;
+  background-color: currentColor;
+  transition: transform 250ms ease;
+}
 
-  &::after {
-    transform: rotate(45deg);
-    bottom: 50%;
-  }
+.burger::before {
+  top: 0;
+}
+
+.burger::after {
+  bottom: 0;
+}
+
+.burgerActive::before {
+  top: 50%;
+  transform: rotate(-45deg) translateY(-50%);
+}
+
+.burgerActive::after {
+  bottom: 50%;
+  transform: rotate(45deg) translateY(50%);
 }
