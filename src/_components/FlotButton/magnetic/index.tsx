@@ -8,7 +8,7 @@ import { useMagnetic } from '../../../_hooks';
 import { MagneticItem } from './index.styled';
 import { magneticVariance } from './index.variance';
 
-type MagneticButtonVariant = 'default' | 'primary' | 'destructive' | 'secondary' | 'ghost' | 'outline';
+type MagneticButtonVariant = 'default' | 'primary' | 'destructive' | 'secondary' | 'ghost' | 'outlineDark' | 'outline';
 type MagneticButtonSize = 'default' | 'md' | 'lg' | 'xl';
 
 type MagneticButtonProps = Omit<HTMLMotionProps<'button'>, 'children'> & {
@@ -16,6 +16,7 @@ type MagneticButtonProps = Omit<HTMLMotionProps<'button'>, 'children'> & {
     className?: string;
     variant?: MagneticButtonVariant;
     size?: MagneticButtonSize;
+    scaleOnHover?: boolean;
 };
 
 const cn = (...classes: Array<string | false | null | undefined>) =>
@@ -26,6 +27,8 @@ export function MagneticButton({
     className,
     variant = 'default',
     size = 'default',
+    scaleOnHover = false,
+
     ...props
 }: MagneticButtonProps) {
     const elementRef = useRef<HTMLButtonElement | null>(null);
@@ -50,7 +53,8 @@ export function MagneticButton({
             }}
             onPointerMove={handleMagneticMove}
             onPointerOut={handleMagneticOut}
-            whileHover={{ scale: 1.1 }}
+            whileHover={scaleOnHover ? { scale: 1.1 } : undefined}
+
             {...props}
         >
             <MagneticItem>{children}</MagneticItem>

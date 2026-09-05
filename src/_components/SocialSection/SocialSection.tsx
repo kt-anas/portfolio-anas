@@ -53,7 +53,7 @@ export default function SocialSection() {
                     className="h-[38px] px-5 rounded-full border border-[#e5e5e5] flex items-center gap-2 text-[14px] font-medium text-[#030303] hover:border-black transition-all"
                 >
                     <span>Download Resume</span>
-                    <FiDownload size={15} />
+
                 </a>
             </div>
         </div>

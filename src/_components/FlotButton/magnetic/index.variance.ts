@@ -12,7 +12,6 @@ const baseClasses = [
     'ring-offset-background',
     'transition-colors',
 
-    // ::before (the fill-in circle, hidden state — shape/position only, NOT color)
     'before:absolute',
     'before:left-[-10%]',
     'before:top-[-10%]',
@@ -24,7 +23,7 @@ const baseClasses = [
     'before:pb-[120%]',
     'before:content-[""]',
 
-    // ::after (the slide-away cover, hidden state — shape/position only, NOT color)
+
     'after:absolute',
     'after:inset-0',
     'after:h-full',
@@ -36,21 +35,21 @@ const baseClasses = [
     'after:ease-in-expo',
     'after:content-[""]',
 
-    // hover: ::before (fill grows in — this is what MOVES the color, not what sets it)
+
     'hover:before:translate-y-0',
     'hover:before:scale-100',
     'hover:before:transition-transform',
     'hover:before:duration-300',
     'hover:before:ease-in-expo',
 
-    // hover: ::after (cover slides out of the way)
+
     'hover:after:translate-y-0',
     'hover:after:transition-transform',
     'hover:after:delay-300',
     'hover:after:duration-75',
     'hover:after:ease-linear',
 
-    // focus / disabled states
+
     'focus-visible:outline-none',
     'focus-visible:ring-2',
     'focus-visible:ring-ring',
@@ -74,6 +73,9 @@ export const magneticVariance = cva(
                 ghost:
                     'bg-foreground text-background before:bg-white after:bg-white hover:text-black',
                 outline: 'border border-solid before:bg-primary after:bg-primary',
+
+                outlineDark:
+                    'bg-transparent text-black border border-black/40 hover:text-white before:bg-black after:bg-black',
             },
             // change a color here to change what the hover effect looks like 
 
