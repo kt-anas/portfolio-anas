@@ -1,23 +1,25 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, type Dispatch, type SetStateAction } from 'react';
 import { motion } from 'framer-motion';
-import classes from './index.module.css';
-import { useOffcanvasToggle } from '@/src/_hooks/use-offcanvas-toggle';
+
 import { MagneticButton } from '@/src/_components/FlotButton/magnetic';
+import { useOffcanvasToggle } from '@/src/_hooks/use-offcanvas-toggle';
 import { cn } from '@/src/_utils';
 
-/**
- * @param {Object} props
- * @param {boolean} props.isOpen
- * @param {import('react').Dispatch<SetStateAction<boolean>>} props.handleOpen
- */
-export function OffcanvasToggle({ isOpen, handleOpen }) {
-    /** @type {import('react').MutableRefObject<HTMLDivElement>} */
-    const containerRef = useRef(null);
+import classes from './index.module.css';
+
+type OffcanvasToggleProps = {
+    isOpen: boolean;
+    handleOpen: Dispatch<SetStateAction<boolean>>;
+};
+
+export function OffcanvasToggle({ isOpen, handleOpen }: OffcanvasToggleProps) {
+    const containerRef = useRef<HTMLDivElement | null>(null);
+
     const { scrollYProgress } = useOffcanvasToggle({
         element: containerRef,
-        callback: latest => latest <= 1 && handleOpen(false),
+        callback: (latest: number) => latest <= 1 && handleOpen(false),
     });
 
     return (

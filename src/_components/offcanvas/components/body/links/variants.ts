@@ -1,38 +1,40 @@
-/** @type {import('framer-motion').Variants} */
-export const slideOut = {
-  initial: {
-    x: 80,
-  },
-  enter: i => ({
-    x: 0,
-    transition: {
-      duration: 0.8,
-      ease: [0.76, 0, 0.24, 1],
-      delay: 0.05 * i,
+import type { Variants } from 'framer-motion';
+
+const easing = [0.76, 0, 0.24, 1] as const;
+
+export const slideOut: Variants = {
+    initial: {
+        x: 80,
     },
-  }),
-  exit: i => ({
-    x: 80,
-    transition: {
-      duration: 0.8,
-      ease: [0.76, 0, 0.24, 1],
-      delay: 0.05 * i,
-    },
-  }),
+    enter: (i: number) => ({
+        x: 0,
+        transition: {
+            duration: 0.8,
+            ease: easing,
+            delay: 0.05 * i,
+        },
+    }),
+    exit: (i: number) => ({
+        x: 80,
+        transition: {
+            duration: 0.8,
+            ease: easing,
+            delay: 0.05 * i,
+        },
+    }),
 };
 
-/** @type {import('framer-motion').Variants} */
-export const scale = {
-  open: {
-    scale: 1,
-    transition: {
-      duration: 0.3,
+export const scale: Variants = {
+    open: {
+        scale: 1,
+        transition: {
+            duration: 0.3,
+        },
     },
-  },
-  closed: {
-    scale: 0,
-    transition: {
-      duration: 0.4,
+    closed: {
+        scale: 0,
+        transition: {
+            duration: 0.4,
+        },
     },
-  },
 };
