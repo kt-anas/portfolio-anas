@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/src/_components/Header";
 import { Offcanvas } from "@/src/_components/offcanvas";
 import CursorFollower from "../_components/CursorFollower";
+import Footer from "../_components/Footer";
 
 const spaceGrotesk = Space_Grotesk({
     variable: "--font-space-grotesk",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 <Header />
                 <Offcanvas />
                 {children}
+                <Footer />
             </body>
         </html>
     );

@@ -76,11 +76,16 @@ export const magneticVariance = cva(
 
                 outlineDark:
                     'bg-transparent text-black border border-black/40 hover:text-white before:bg-black after:bg-black',
+
+                outlinePill:
+                    'bg-transparent text-black border border-black/40 hover:text-white before:bg-black ',
+
             },
             // change a color here to change what the hover effect looks like 
 
             size: {
                 default: 'p-2 text-sm',
+                pill: 'h-12 px-6 text-sm',
                 md: 'px-8 py-10 text-base',
                 lg: 'px-8 py-16 text-lg lg:px-12 lg:py-20',
                 xl: 'px-10 py-16 text-lg lg:px-14 lg:py-20',

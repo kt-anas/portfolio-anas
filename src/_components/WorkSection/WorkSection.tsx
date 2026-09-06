@@ -33,30 +33,66 @@ const WorkSection = () => {
                         </MagneticButton>
                     </div>
                     <div className='grid gap-2'>
-                        <figure className='sticky top-0 h-screen grid place-content-start'>
+                        <figure
+                            className='sticky top-0 h-screen grid place-content-start cursor-none'
+                            data-cursor="white"
+                            data-cursor-label="View More"
+                        >
                             <img
                                 src='https://wp.aqlova.com/aleric/personal-portfolio/wp-content/uploads/sites/12/2025/12/thumb-1.jpg'
                                 alt=''
                                 className='transition-all duration-300 w-full  align-bottom object-cover '
                             />
+                            <h1
+                                className="
+        inline-block
+        text-[24px]
+        font-medium
+        cursor-pointer
+    "
+                            >
+                                <span
+                                    className="
+            relative
+            inline-block
+            after:absolute
+            after:left-0
+            after:bottom-[-3px]
+            after:h-[2px]
+            after:w-full
+            after:origin-left
+            after:scale-x-0
+            after:bg-black
+            after:transition-transform
+            after:duration-500
+            after:ease-out
+            hover:after:scale-x-100
+        "
+                                >
+                                    Crafting Digital Experiences
+                                </span>
+                            </h1>
                         </figure>
-                        <figure className='sticky top-0 h-screen grid place-content-start'>
+                        <figure className='sticky top-0 h-screen grid place-content-start' data-cursor="white"
+                            data-cursor-label="View More">
                             <img
-                                src='https://images.unsplash.com/photo-1715432362539-6ab2ab480db2?w=500&auto=format&fit=crop'
+                                src='https://wp.aqlova.com/aleric/personal-portfolio/wp-content/uploads/sites/12/2025/12/thumb-2.jpg'
                                 alt=''
                                 className='transition-all duration-300 w-full  align-bottom object-cover '
 
 
                             />
                         </figure>
-                        <figure className='sticky top-0 h-screen grid place-content-start'>
+                        <figure className='sticky top-0 h-screen grid place-content-start' data-cursor="white"
+                            data-cursor-label="View More">
                             <img
                                 src='https://images.unsplash.com/photo-1685904042960-66242a0ac352?w=500&auto=format&fit=crop'
                                 alt=''
                                 className='transition-all duration-300 w-full  align-bottom object-cover '
                             />
                         </figure>
-                        <figure className='sticky top-0 h-screen grid place-content-start'>
+                        <figure className='sticky top-0 h-screen grid place-content-start' data-cursor="white"
+                            data-cursor-label="View More">
                             <img
                                 src='https://images.unsplash.com/photo-1718838541476-d04e71caa347?w=500&auto=format&fit=crop'
                                 alt=''
