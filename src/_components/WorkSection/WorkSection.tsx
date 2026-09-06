@@ -12,7 +12,7 @@ const WorkSection = () => {
                         <MagneticButton
                             size='md'
                             variant='outlineDark'
-                            className='h-[200px] w-[200px] rounded-full border border-black/40 bg-transparent text-black hover:text-white before:bg-black after:bg-black'
+                            className='h-[200px] w-[200px] rounded-full border border-black/40 bg-transparent text-black hover:text-white  '
                             data-cursor='white'
                         >
                             <span className='flex flex-col items-center justify-center gap-2'>

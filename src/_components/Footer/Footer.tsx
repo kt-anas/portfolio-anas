@@ -1,9 +1,17 @@
 import Button from '../Button'
 import { MagneticButton } from '../FlotButton'
+import { FaBehance, FaDribbble, FaInstagram, FaLinkedinIn, FaPinterestP } from 'react-icons/fa6'
+
+const socialLinks = [
+    { href: '#', label: 'Dribbble', icon: FaDribbble },
+    { href: '#', label: 'Behance', icon: FaBehance },
+    { href: '#', label: 'Pinterest', icon: FaPinterestP },
+    { href: '#', label: 'Linkedin', icon: FaLinkedinIn },
+]
 
 const Footer = () => {
     return (
-        <footer className='border-t border-black/10 h-screen bg-[#FFFFFF]'>
+        <footer className='h-screen border-t border-black/10 bg-[#FFFFFF]'>
             <div className='container px-6 py-16 md:px-8 lg:px-12'>
                 <div className="flex flex-col items-center justify-center border-b border-black/10 pb-10 text-center">
                     <div className="max-w-2xl">
@@ -17,6 +25,19 @@ const Footer = () => {
                             Together.
                         </h2>
                     </div>
+
+                    <div className='mt-10 flex flex-wrap items-center justify-center gap-4'>
+                        {socialLinks.map(({ href, label, icon: Icon }) => (
+                            <a
+                                key={label}
+                                href={href}
+                                className='group flex items-center gap-2 rounded-full border border-black/10 bg-[#1b1b1b] px-5 py-2.5 text-[0.9rem] font-medium tracking-[-0.02em] text-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:border-black hover:bg-black hover:text-white'
+                            >
+                                <Icon className='text-lg transition-transform duration-300 group-hover:scale-110' />
+                                <span>{label}</span>
+                            </a>
+                        ))}
+                    </div>
                 </div>
 
                 <div className='mt-10 flex flex-col gap-8 text-black md:flex-row md:items-center md:justify-between'>
@@ -28,7 +49,7 @@ const Footer = () => {
                         <MagneticButton
                             size='md'
                             variant='outlinePill'
-                            className='h-[10px]  rounded-full border border-black/40 bg-transparent text-black hover:text-white before:bg-black '
+                            className='h-[10px]  not-last-of-type: rounded-full border border-black/40 bg-transparent text-black hover:text-white before:bg-black'
                             data-cursor='white'
                         >
                             <a href='mailto:muhanaskt@gmail.com' className='transition-opacity hover:opacity-80'>
@@ -38,15 +59,12 @@ const Footer = () => {
                         <MagneticButton
                             size='md'
                             variant='outlinePill'
-                            className='h-[10px]  rounded-full border'
+                            className='h-[10px]  rounded-full border border-black/40 bg-transparent text-black hover:text-white before:bg-black '
                             data-cursor='white'
                         >
-
                             <a href='tel:+90 790 910 9268'>+90 790 910 9268</a>
                         </MagneticButton>
                     </div>
-
-
                 </div>
 
                 <div className='mt-8 flex flex-col gap-3 border-t border-black/10 pt-6 text-sm text-black/50 md:flex-row md:items-center md:justify-between'>
