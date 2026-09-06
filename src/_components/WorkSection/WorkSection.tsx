@@ -6,9 +6,21 @@ const WorkSection = () => {
             <section className=' w-full bg-white  '>
                 <div className='container grid grid-cols-2 px-8'>
                     <div className='sticky top-0 h-screen grid place-content-start'>
-                        <h1 className='text-[145px] uppercase px-8 font-medium text-right tracking-tight leading-[1.6]'>
+                        <div className='flex items-center'>
+                            <svg className="mr-1" width="110" height="12" viewBox="0 0 110 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="10" width="110" height="2" rx="1" fill="#030303"></rect>
+                                <rect x="60" width="50" height="2" rx="1" fill="#999999"></rect>
+                            </svg>
+                            <span className="text-[25px]  px-8 font-medium text-right tracking-tight">Featured</span>
+                        </div>
+                        <h1 className='text-[145px] uppercase pb-8 font-medium text-right tracking-tight leading-[1.6]'>
                             Work
                         </h1>
+
+                        <span>
+                            <svg fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 2.5L0 0.113249V5.88675L5 3.5V2.5ZM419 3.5L424 5.88675V0.113249L419 2.5V3.5ZM4.5 3.5H419.5V2.5H4.5V3.5Z" fill="#EEEEEE"></path>
+                            </svg>								</span>
                         <MagneticButton
                             size='md'
                             variant='outlineDark'

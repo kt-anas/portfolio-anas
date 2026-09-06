@@ -1,36 +1,61 @@
+import Image from "next/image";
 import SocialSection from "../SocialSection";
+import TextAnimation from "../TextAnimation";
+
+
+const fadeUpBlur = {
+    hidden: { filter: 'blur(10px)', opacity: 0, y: 20 },
+    visible: {
+        filter: 'blur(0px)',
+        opacity: 1,
+        y: 0,
+        transition: { ease: 'linear' },
+    },
+};
+
 
 const HeroSection = () => {
+
     return (
-        <section className="relative min-h-[calc(100vh-80px)] px-8 pt-24">
-            <div className="container flex flex-col gap-[2.5rem] lg:gap-[3.75rem]">
+        <section className="relative min-h-screen   pt-24">
+            <div className="container-fluid h-[calc(100vh-6rem)] flex flex-col justify-end gap-[1.5rem] pb-16">
 
-                {/* Intro */}
-                <p className="text-[18px] leading-[26px] font-medium">
-                    I'm Muhammed Anas,
-                </p>
 
-                {/* Heading */}
-                <h1 className="mt-5 text-[100px] leading-[1] font-medium tracking-[-4px]">
-                    FRONT-END
-                    <br />
-                    DEVELOPER &
-                    <br />
-                    DESIGNER.
-                </h1>
 
-                {/* Description */}
-                <p className="mt-12 ml-[200px] max-w-[560px] text-[24px] leading-[34px] font-normal text-[#555]">
-                    I design and build modern, responsive & interactive
-                    <br />
-                    digital experiences for the web.
-                </p>
+                <TextAnimation
+                    as="p"
+                    text="I'm Muhammed Anas,"
+                    variants={fadeUpBlur}
+                    classname="text-[18px] leading-[26px] font-medium normal-case"
+                />
 
-                {/* Social */}
-                <div className=" bottom-10 left-8">
+
+                <TextAnimation
+                    as="h1"
+                    text="WEB DEVELOPER & DESIGNER."
+                    variants={fadeUpBlur}
+                    classname="mt-5 uppercase text-[200px] leading-[1] font-medium tracking-[-4px]"
+                    breakAfter={['DEVELOPER']}
+
+                />
+
+                {/* <TextAnimation
+                    as="p"
+                    text="I design and build modern, responsive & interactive digital experiences for the web."
+                    variants={fadeUpBlur}
+                    classname="mt-5 text-[18px] leading-[26px] font-medium normal-case"
+                /> */}
+
+
+                {/* <div className="bottom-10 left-8">
                     <SocialSection />
-                </div>
+                </div> */}
+
+
+
+
             </div>
+
         </section>
     );
 };

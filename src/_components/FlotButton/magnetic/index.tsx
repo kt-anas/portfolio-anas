@@ -8,7 +8,7 @@ import { useMagnetic } from '../../../_hooks';
 import { MagneticItem } from './index.styled';
 import { magneticVariance } from './index.variance';
 
-type MagneticButtonVariant = 'default' | 'primary' | 'destructive' | 'secondary' | 'ghost' | 'outlineDark' | 'outline';
+type MagneticButtonVariant = 'default' | 'primary' | 'destructive' | 'secondary' | 'ghost' | 'outlineDark' | 'outline' | 'outlinePill';
 type MagneticButtonSize = 'default' | 'md' | 'lg' | 'xl';
 
 type MagneticButtonProps = Omit<HTMLMotionProps<'button'>, 'children'> & {
