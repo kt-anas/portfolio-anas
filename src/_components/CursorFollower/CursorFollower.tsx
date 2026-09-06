@@ -22,7 +22,7 @@ export function CursorFollower() {
     const y = useSpring(cursorY, springConfig);
 
     useEffect(() => {
-        const moveCursor = (event) => {
+        const moveCursor = (event: MouseEvent) => {
             setIsVisible(true);
 
             cursorX.set(event.clientX);
