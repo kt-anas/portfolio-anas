@@ -1,5 +1,15 @@
 import { ReactLenis } from 'lenis/react';
-
+import TextAnimation from '../TextAnimation';
+import Button from '../Button';
+const fadeUpBlur = {
+    hidden: { filter: 'blur(10px)', opacity: 0, y: 20 },
+    visible: {
+        filter: 'blur(0px)',
+        opacity: 1,
+        y: 0,
+        transition: { ease: 'linear' },
+    },
+};
 const services = [
     {
         number: '01.',
@@ -34,19 +44,21 @@ const WhatIDo = () => {
     return (
         <ReactLenis root>
             <main className=" bg-black text-white">
-                <div className="container-fluid flex flex-col md:flex-row md:items-start justify-between py-20 lg:py-28 min-h-[420px] bg-black text-white gap-8">
+                <div className="container-fluid flex flex-col md:flex-row md:items-start justify-between py-20 lg:py-28 min-h-[420px] bg-black text-white gap-10 md:gap-16 lg:gap-24">
                     <p className="text-[11px] font-medium uppercase tracking-[0.35em] text-white/65 shrink-0 pt-3">
-                        About me
+                        What I do
                     </p>
 
-                    <div className="w-full md:w-[65%] text-[clamp(2.2rem,4vw,5rem)] font-medium leading-[0.9] tracking-[-0.06em] text-white">
-                        <p>
-                            I help brands build intuitive and
-                            user-friendly digital products
-                            through a strategic design
-                            approach.
-                        </p>
-                    </div>
+                    <TextAnimation
+                        as='div'
+                        text="I help brands build intuitive and user-friendly digital products through a strategic design approach."
+                        variants={fadeUpBlur}
+                        itemAs='p'
+                        classname='w-full md:max-w-[70%] lg:max-w-[65%]'
+                        itemClassname='text-[clamp(2.2rem,4vw,5rem)] font-medium leading-[0.95] tracking-[-0.06em] text-white'
+                        wordStagger={0.08}
+                    />
+
                 </div>
                 <div className="w-full">
 
@@ -66,7 +78,7 @@ const WhatIDo = () => {
 
 
                                 {/* CONTENT */}
-                                <div className="flex flex-col justify-between py-2">
+                                <div className="flex flex-col gap-y-10 py-2">
 
                                     <div>
                                         <h2
@@ -104,38 +116,7 @@ const WhatIDo = () => {
 
 
                                         {/* BUTTON */}
-                                        <button
-                                            type="button"
-                                            className="
-                                                group
-                                                relative
-                                                flex
-                                                h-[46px]
-                                                items-center
-                                                gap-2
-                                                overflow-hidden
-                                                rounded-full
-                                                bg-white
-                                                px-6
-                                                text-[14px]
-                                                font-medium
-                                                text-black
-                                            "
-                                        >
-                                            <span
-                                                className="
-                                                    transition-transform
-                                                    duration-300
-                                                    group-hover:translate-x-1
-                                                "
-                                            >
-                                                →
-                                            </span>
-
-                                            <span>
-                                                SEE OUR SERVICES
-                                            </span>
-                                        </button>
+                                        <Button />
 
 
                                         {/* TAGS */}

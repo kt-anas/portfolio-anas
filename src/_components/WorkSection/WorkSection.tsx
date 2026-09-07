@@ -1,10 +1,11 @@
 import { ReactLenis } from 'lenis/react';
 import { MagneticButton } from '../FlotButton';
+import TextAnimation from '../TextAnimation';
 const WorkSection = () => {
     return (
         <ReactLenis root>
             <section className=' w-full bg-white  '>
-                <div className='container-fluid grid grid-cols-2'>
+                <div className='container-fluid pt-[135px] grid grid-cols-2'>
                     <div className='sticky top-0 h-screen grid place-content-start'>
                         <div className='flex items-center'>
                             <svg className="mr-1" width="110" height="12" viewBox="0 0 110 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -13,14 +14,30 @@ const WorkSection = () => {
                             </svg>
                             <span className="text-[25px]  px-8 font-medium text-right tracking-tight">Featured</span>
                         </div>
-                        <h1 className='text-[145px] uppercase pb-8 font-medium text-right tracking-tight leading-[1.6]'>
-                            Work
-                        </h1>
 
+                        <TextAnimation
+                            as='h1'
+                            letterAnime={true}
+                            text="WORK"
+                            itemClassname='text-[145px] uppercase pb-8 font-medium text-right tracking-tight leading-[1.6]'
+                            variants={{
+                                hidden: { filter: 'blur(4px)', opacity: 0, y: 20 },
+                                visible: {
+                                    filter: 'blur(0px)',
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: {
+                                        duration: 0.2,
+                                    },
+                                },
+                            }}
+                        />
                         <span>
                             <svg fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 2.5L0 0.113249V5.88675L5 3.5V2.5ZM419 3.5L424 5.88675V0.113249L419 2.5V3.5ZM4.5 3.5H419.5V2.5H4.5V3.5Z" fill="#EEEEEE"></path>
-                            </svg>								</span>
+                            </svg>
+
+                        </span>
                         <MagneticButton
                             size='md'
                             variant='outlineDark'

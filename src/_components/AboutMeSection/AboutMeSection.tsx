@@ -1,3 +1,16 @@
+import TextAnimation from "../TextAnimation"
+
+
+const fadeUpBlur = {
+    hidden: { filter: 'blur(10px)', opacity: 0, y: 20 },
+    visible: {
+        filter: 'blur(0px)',
+        opacity: 1,
+        y: 0,
+        transition: { ease: 'linear' },
+    },
+};
+
 const AboutMeSection = () => {
     return (
         <section className='overflow-hidden border-y border-white/10 bg-[#050505]'>
@@ -7,17 +20,20 @@ const AboutMeSection = () => {
                         About me
                     </p>
 
-                    <div className='space-y-7 text-[clamp(2.2rem,4vw,5rem)] font-medium leading-[0.9] tracking-[-0.06em] text-white'>
-                        <p>
-                            I’m a Front-End Developer focused on building modern, interactive,
-                            and high-performance web experiences.
-                        </p>
-
-                        <p>
-                            I enjoy turning ideas and designs into clean, responsive interfaces
-                            that feel smooth and intuitive to use.
-                        </p>
-                    </div>
+                    <TextAnimation
+                        as='div'
+                        text={[
+                            "I'm a Front-End Developer focused on building modern, interactive, and high-performance web experiences.",
+                            "I enjoy turning ideas and designs into clean, responsive interfaces that feel smooth and intuitive to use.",
+                        ]}
+                        variants={fadeUpBlur}
+                        itemAs='p'
+                        gapClassname='space-y-7'
+                        itemClassname='text-[clamp(2.2rem,4vw,5rem)] font-medium leading-[0.9] tracking-[-0.06em] text-white normal-case'
+                        staggerMode='sequential'
+                        wordStagger={0.08}
+                        lineGap={0.25}
+                    />
 
 
 
@@ -35,7 +51,7 @@ const AboutMeSection = () => {
                     <div className='absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.4),transparent_38%)]' />
 
                     <img
-                        src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80'
+                        src='./images/DP.png'
                         alt='Portrait of the developer'
                         className='h-full w-full object-cover object-center grayscale'
                     />
