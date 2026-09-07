@@ -1,5 +1,4 @@
-import Image from "next/image";
-import SocialSection from "../SocialSection";
+
 import TextAnimation from "../TextAnimation";
 
 
@@ -18,7 +17,7 @@ const HeroSection = () => {
 
     return (
         <section className="relative min-h-screen   pt-24">
-            <div className="container-fluid h-[calc(100vh-6rem)] flex flex-col justify-end gap-[1.5rem] pb-16">
+            <div className="container-fluid h-[calc(100vh-6rem)] flex flex-col justify-end  pb-16">
 
 
 

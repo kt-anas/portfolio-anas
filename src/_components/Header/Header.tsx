@@ -1,7 +1,6 @@
 "use client"
 
 import Button from "../Button"
-import { CiGlobe } from "react-icons/ci";
 const Header = () => {
 
     return (

@@ -33,31 +33,29 @@ const services = [
 const WhatIDo = () => {
     return (
         <ReactLenis root>
-            <main className="w-full bg-black text-white">
+            <main className=" bg-black text-white">
+                <div className="container-fluid flex flex-col md:flex-row md:items-start justify-between py-20 lg:py-28 min-h-[420px] bg-black text-white gap-8">
+                    <p className="text-[11px] font-medium uppercase tracking-[0.35em] text-white/65 shrink-0 pt-3">
+                        About me
+                    </p>
+
+                    <div className="w-full md:w-[65%] text-[clamp(2.2rem,4vw,5rem)] font-medium leading-[0.9] tracking-[-0.06em] text-white">
+                        <p>
+                            I help brands build intuitive and
+                            user-friendly digital products
+                            through a strategic design
+                            approach.
+                        </p>
+                    </div>
+                </div>
                 <div className="w-full">
 
                     {services.map((service, index) => (
                         <section
                             key={service.number}
-                            className="
-                                sticky top-0
-                                min-h-screen
-                                w-full
-                                border-t border-white/20
-                                bg-black
-                                px-8 py-10
-                                lg:px-16
-                            "
+                            className="sticky top-0 min-h-screen w-full border-t border-white/20 bg-black py-10"
                         >
-                            <div
-                                className="
-                                    grid min-h-[calc(100vh-80px)]
-                                    grid-cols-1
-                                    gap-10
-                                    lg:grid-cols-[80px_1fr_430px]
-                                    lg:gap-10
-                                "
-                            >
+                            <div className="container-fluid grid min-h-[calc(100vh-80px)] grid-cols-1 gap-10 lg:grid-cols-[80px_1fr_430px] lg:gap-10">
 
                                 {/* NUMBER */}
                                 <div className="pt-2">

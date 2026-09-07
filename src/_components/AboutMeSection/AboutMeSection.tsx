@@ -1,8 +1,8 @@
 const AboutMeSection = () => {
     return (
         <section className='overflow-hidden border-y border-white/10 bg-[#050505]'>
-            <div className='grid min-h-[45rem] grid-cols-1 lg:grid-cols-[1.25fr_0.75fr]'>
-                <div className='flex flex-col justify-center px-6 py-12 md:px-10 lg:px-14 xl:px-20'>
+            <div className=' container-fluid grid min-h-[45rem] grid-cols-1 lg:grid-cols-[1.25fr_0.75fr]'>
+                <div className='flex flex-col justify-center py-12 pr-6 md:pr-10 lg:pr-14'>
                     <p className='mb-8 text-[11px] font-medium uppercase tracking-[0.35em] text-white/65'>
                         About me
                     </p>
@@ -19,30 +19,16 @@ const AboutMeSection = () => {
                         </p>
                     </div>
 
-                    <div className='mt-10 max-w-[45rem] space-y-6 text-[1.05rem] leading-[1.8] text-white/75 md:text-[1.15rem]'>
-                        <p>
-                            I work primarily with React, Next.js, JavaScript, Tailwind CSS,
-                            and SCSS, with a strong interest in animation and creative web
-                            development using tools like GSAP and Framer Motion.
-                        </p>
 
-                        <p>
-                            I’m constantly learning, experimenting with new technologies, and
-                            looking for better ways to build digital experiences. For me, great
-                            frontend development is not just about writing code — it’s about
-                            creating experiences that look good, feel natural, and work
-                            flawlessly.
-                        </p>
-                    </div>
 
-                    <div className='mt-10'>
+                    {/* <div className='mt-10'>
                         <a
                             href='#work'
                             className='inline-flex items-center border border-white/20 px-5 py-2.5 text-[11px] font-medium uppercase tracking-[0.22em] text-white transition-colors hover:border-white hover:bg-white hover:text-black'
                         >
                             Know More
                         </a>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className='relative min-h-[26.25rem] bg-[#d8d5d0]'>

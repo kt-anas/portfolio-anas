@@ -4,7 +4,7 @@ const WorkSection = () => {
     return (
         <ReactLenis root>
             <section className=' w-full bg-white  '>
-                <div className='container grid grid-cols-2 px-8'>
+                <div className='container-fluid grid grid-cols-2'>
                     <div className='sticky top-0 h-screen grid place-content-start'>
                         <div className='flex items-center'>
                             <svg className="mr-1" width="110" height="12" viewBox="0 0 110 12" fill="none" xmlns="http://www.w3.org/2000/svg">
