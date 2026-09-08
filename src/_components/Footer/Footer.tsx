@@ -1,17 +1,17 @@
 import Button from '../Button'
 import { MagneticButton } from '../FlotButton'
-import { FaBehance, FaDribbble, FaInstagram, FaLinkedinIn, FaPinterestP } from 'react-icons/fa6'
+import { FaGithub, FaDribbble, FaInstagram, FaLinkedinIn } from 'react-icons/fa6'
 
 const socialLinks = [
-    { href: '#', label: 'Dribbble', icon: FaDribbble },
-    { href: '#', label: 'Behance', icon: FaBehance },
-    { href: '#', label: 'Pinterest', icon: FaPinterestP },
+
+    { href: '#', label: 'Github', icon: FaGithub },
+    { href: '#', label: 'Instagram', icon: FaInstagram },
     { href: '#', label: 'Linkedin', icon: FaLinkedinIn },
 ]
 
 const Footer = () => {
     return (
-        <footer className='h-screen border-t border-black/10 bg-[#FFFFFF]'>
+        <footer id='contact' className='h-screen border-t border-black/10 bg-[#FFFFFF]'>
             <div className='container px-6 py-16 md:px-8 lg:px-12'>
                 <div className="flex flex-col items-center justify-center border-b border-black/10 pb-10 text-center">
                     <div className="max-w-2xl">

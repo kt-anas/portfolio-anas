@@ -13,7 +13,7 @@ const fadeUpBlur = {
 
 const AboutMeSection = () => {
     return (
-        <section className='overflow-hidden border-y border-white/10 bg-[#050505]'>
+        <section id='about' className='overflow-hidden border-y border-white/10 bg-[#050505]'>
             <div className=' container-fluid grid min-h-[45rem] grid-cols-1 lg:grid-cols-[1.25fr_0.75fr]'>
                 <div className='flex flex-col justify-center py-12 pr-6 md:pr-10 lg:pr-14'>
                     <p className='mb-8 text-[11px] font-medium uppercase tracking-[0.35em] text-white/65'>

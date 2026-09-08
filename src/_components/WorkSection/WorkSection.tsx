@@ -4,7 +4,7 @@ import TextAnimation from '../TextAnimation';
 const WorkSection = () => {
     return (
         <ReactLenis root>
-            <section className=' w-full bg-white  '>
+            <section id='work' className=' w-full bg-white  '>
                 <div className='container-fluid pt-[135px] grid grid-cols-2'>
                     <div className='sticky top-0 h-screen grid place-content-start'>
                         <div className='flex items-center'>

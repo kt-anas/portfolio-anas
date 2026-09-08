@@ -13,6 +13,15 @@ const fadeUpBlur = {
 const services = [
     {
         number: '01.',
+        title: 'WEB DEVELOPMENT',
+        description:
+            'Building fast, responsive and interactive websites using modern technologies, with a strong focus on performance, usability and visual quality.',
+        image:
+            'https://wp.aqlova.com/aleric/personal-portfolio/wp-content/uploads/sites/12/2025/11/pp-3.jpg',
+        tags: ['Next.js', 'React', 'GSAP'],
+    },
+    {
+        number: '02.',
         title: 'UI/UX DESIGN',
         description:
             'Whether you need stunning visuals for your website, captivating graphics for your marketing materials, or innovative UI/UX designs for your app, our team of experts is here to turn your vision into reality.',
@@ -21,7 +30,7 @@ const services = [
         tags: ['UX Design', 'User Testing', 'Motion Design'],
     },
     {
-        number: '02.',
+        number: '03.',
         title: 'USER RESEARCH',
         description:
             'I create meaningful digital experiences by understanding users, their needs, behaviours, and goals, turning research into clear and useful design decisions.',
@@ -29,15 +38,7 @@ const services = [
             'https://wp.aqlova.com/aleric/personal-portfolio/wp-content/uploads/sites/12/2025/11/pp-2.jpg',
         tags: ['User Research', 'Usability Testing', 'User Interviews'],
     },
-    {
-        number: '03.',
-        title: 'WEB DEVELOPMENT',
-        description:
-            'Building fast, responsive and interactive websites using modern technologies, with a strong focus on performance, usability and visual quality.',
-        image:
-            'https://wp.aqlova.com/aleric/personal-portfolio/wp-content/uploads/sites/12/2025/11/pp-3.jpg',
-        tags: ['Next.js', 'React', 'GSAP'],
-    },
+
 ];
 
 const WhatIDo = () => {
