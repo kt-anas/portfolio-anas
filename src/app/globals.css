@@ -43,6 +43,7 @@
     --container-padding: 6.25rem;
     --container-padding-md: 3.75rem;
     --container-padding-sm: 1.5rem;
+    --container-fluid: 119.063rem;
 
     /* Section Spacing (8px system) */
     --section-spacing: 7.5rem;
@@ -396,6 +397,7 @@
   }
 
   .container-fluid {
+    max-width: var(--container-fluid);
     width: 100%;
     padding-left: var(--container-padding);
     padding-right: var(--container-padding);

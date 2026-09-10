@@ -19,7 +19,7 @@ const Footer = () => {
                             Let’s build something bold
                         </p>
 
-                        <h2 className="text-[9.063rem] font-medium leading-[9.063rem] tracking-[-0.06em] text-black">
+                        <h2 className="text-[5.063rem] leading-[5.063rem] tracking-[-0.06em]  xl:text-[9.063rem] font-medium xl:leading-[9.063rem] xl:tracking-[-0.06em] text-black">
                             Let’s Work
                             <br />
                             Together.

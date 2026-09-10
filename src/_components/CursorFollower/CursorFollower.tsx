@@ -22,6 +22,9 @@ export function CursorFollower() {
     const y = useSpring(cursorY, springConfig);
 
     useEffect(() => {
+        if (window.innerWidth < 768) {
+            return;
+        }
         const moveCursor = (event: MouseEvent) => {
             setIsVisible(true);
 

@@ -33,7 +33,7 @@ const HeroSection = () => {
                     as="h1"
                     text="WEB DEVELOPER & DESIGNER."
                     variants={fadeUpBlur}
-                    classname="mt-5 uppercase text-[200px] leading-[1] font-medium tracking-[-4px]"
+                    classname="mt-5 uppercase  text-[70px] sm:text-[90px] md:text-[120px]  lg:text-[200px] leading-[1] font-medium tracking-[-4px]"
                     breakAfter={['DEVELOPER']}
 
                 />
