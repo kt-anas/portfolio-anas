@@ -7,9 +7,9 @@ import { randomId } from '@/src/_utils';
 import { FaGithub, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 const socialLinks = [
 
+    { href: '#', label: 'Linkedin', icon: FaLinkedinIn },
     { href: '#', label: 'Github', icon: FaGithub },
     { href: '#', label: 'Instagram', icon: FaInstagram },
-    { href: '#', label: 'Linkedin', icon: FaLinkedinIn },
 ]
 export function OffcanvasFooter() {
     const medias = socialLinks.map(({ href, label, icon: Icon }) => {

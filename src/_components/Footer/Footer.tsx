@@ -1,15 +1,20 @@
+import Link from 'next/link'
 import Button from '../Button'
 import { MagneticButton } from '../FlotButton'
 import { FaGithub, FaDribbble, FaInstagram, FaLinkedinIn } from 'react-icons/fa6'
+import { randomId } from '@/src/_utils'
 
 const socialLinks = [
 
+    { href: '#', label: 'Linkedin', icon: FaLinkedinIn },
     { href: '#', label: 'Github', icon: FaGithub },
     { href: '#', label: 'Instagram', icon: FaInstagram },
-    { href: '#', label: 'Linkedin', icon: FaLinkedinIn },
 ]
 
 const Footer = () => {
+
+    const id = randomId();
+
     return (
         <footer id='contact' className='h-screen border-t border-black/10 bg-[#FFFFFF]'>
             <div className='container px-6 py-16 md:px-8 lg:px-12'>
@@ -26,16 +31,22 @@ const Footer = () => {
                         </h2>
                     </div>
 
-                    <div className='mt-10 flex flex-wrap items-center justify-center gap-4'>
+                    <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
                         {socialLinks.map(({ href, label, icon: Icon }) => (
-                            <a
-                                key={label}
-                                href={href}
-                                className='group flex items-center gap-2 rounded-full border border-black/10 bg-[#1b1b1b] px-5 py-2.5 text-[0.9rem] font-medium tracking-[-0.02em] text-white/80 shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-300 hover:-translate-y-0.5 hover:border-black hover:bg-black hover:text-white'
-                            >
-                                <Icon className='text-lg transition-transform duration-300 group-hover:scale-110' />
-                                <span>{label}</span>
-                            </a>
+                            <div key={label}>
+                                <Link
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <MagneticButton>
+                                        <span className="flex items-center gap-3">
+                                            <Icon size={18} />
+                                            {label}
+                                        </span>
+                                    </MagneticButton>
+                                </Link>
+                            </div>
                         ))}
                     </div>
                 </div>
