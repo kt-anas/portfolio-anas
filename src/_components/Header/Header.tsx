@@ -57,13 +57,22 @@ const Header = () => {
                     <div className="container-fluid flex items-center  justify-between h-19">
                         <div className="font-bold text-4xl">ANAS.</div>
 
-                        <ul className="flex items-center gap-6">
+                        <ul className="hidden items-center gap-6 md:flex">
                             {items}
                         </ul>
 
                         {/* <div>
                             <Button />
                         </div> */}
+                        <button
+                            type="button"
+
+                            className="flex items-center gap-1 text-lg font-medium uppercase md:hidden"
+                            aria-label="Toggle menu"
+                        >
+                            <span className="text-[20px] leading-none">•</span>
+                            <span>Menu</span>
+                        </button>
                     </div>
                 </div>
             </header>
