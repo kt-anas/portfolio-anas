@@ -77,11 +77,12 @@ export function CursorFollower() {
     return (
         <motion.div
             className="
+                hidden md:flex
                 pointer-events-none
                 fixed left-0 top-0
                 z-[9999]
                 rounded-full
-                flex items-center justify-center
+                items-center justify-center
                 whitespace-nowrap
             "
             style={{
