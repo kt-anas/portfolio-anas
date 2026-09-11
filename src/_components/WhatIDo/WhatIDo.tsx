@@ -66,9 +66,9 @@ const WhatIDo = () => {
                     {services.map((service, index) => (
                         <section
                             key={service.number}
-                            className="sticky top-0 min-h-screen w-full border-t border-white/20 bg-black py-10"
+                            className="container-fluid sticky top-0 min-h-screen w-full border-t border-white/20 bg-black py-10"
                         >
-                            <div className="container-fluid grid min-h-[calc(100vh-80px)] grid-cols-1 gap-10 lg:grid-cols-[80px_1fr_430px] lg:gap-10">
+                            <div className=" grid min-h-[calc(100vh-80px)] grid-cols-1 gap-10 lg:grid-cols-[80px_1fr_430px] lg:gap-10">
 
                                 {/* NUMBER */}
                                 <div className="pt-2">
@@ -117,7 +117,7 @@ const WhatIDo = () => {
 
 
                                         {/* BUTTON */}
-                                        <Button />
+                                        <Button variant="dark" />
 
 
                                         {/* TAGS */}
