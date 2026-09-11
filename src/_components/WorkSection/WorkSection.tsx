@@ -5,21 +5,21 @@ const WorkSection = () => {
     return (
         <ReactLenis root>
             <section id='work' className=' w-full bg-white  '>
-                <div className='container-fluid pt-[135px] grid grid-cols-2'>
-                    <div className='sticky top-0 h-screen grid place-content-start'>
-                        <div className='flex items-center'>
+                <div className='container-fluid pt-[80px] md:pt-[135px] grid grid-cols-1 md:grid-cols-2'>
+                    <div className='relative h-auto grid place-content-start md:sticky md:top-0 md:h-screen'>
+                        {/* <div className='flex items-center'>
                             <svg className="mr-1" width="110" height="12" viewBox="0 0 110 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect y="10" width="110" height="2" rx="1" fill="#030303"></rect>
                                 <rect x="60" width="50" height="2" rx="1" fill="#999999"></rect>
                             </svg>
                             <span className="text-[25px]  px-8 font-medium text-right tracking-tight">Featured</span>
-                        </div>
+                        </div> */}
 
                         <TextAnimation
                             as='h1'
                             letterAnime={true}
                             text="WORK"
-                            itemClassname='text-[145px] uppercase pb-8 font-medium text-right tracking-tight leading-[1.6]'
+                            itemClassname='text-[85px] md:text-[145px] uppercase pb-8 font-medium text-right tracking-tight leading-[1.6]'
                             variants={{
                                 hidden: { filter: 'blur(4px)', opacity: 0, y: 20 },
                                 visible: {
@@ -32,12 +32,7 @@ const WorkSection = () => {
                                 },
                             }}
                         />
-                        <span>
-                            <svg fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 2.5L0 0.113249V5.88675L5 3.5V2.5ZM419 3.5L424 5.88675V0.113249L419 2.5V3.5ZM4.5 3.5H419.5V2.5H4.5V3.5Z" fill="#EEEEEE"></path>
-                            </svg>
 
-                        </span>
                         <MagneticButton
                             size='md'
                             variant='outlineDark'
