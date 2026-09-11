@@ -19,7 +19,7 @@ export function OffcanvasLinks() {
         return (
             <motion.li
                 key={id}
-                className='relative my-4 flex items-center'
+                className='relative my-2 flex items-center justify-between gap-3'
                 variants={slideOut}
                 custom={id}
                 initial='initial'
@@ -27,22 +27,22 @@ export function OffcanvasLinks() {
                 exit='exit'
                 onPointerEnter={() => setActiveLink(href)}
             >
-                <motion.div
-                    className='absolute -left-11'
-                    variants={scale}
-                    animate={activeLink === href ? 'open' : 'closed'}
-                >
-                    <Dot size={36} />
-                </motion.div>
-                <Link href={href} className='text-6xl capitalize'>
+                <Link href={href} className='text-4xl md:text-6xl capitalize'>
                     {title}
                 </Link>
+                <motion.div
+                    variants={scale}
+                    animate={activeLink === href ? 'open' : 'closed'}
+                    className='flex-shrink-0'
+                >
+                    <Dot size={30} />
+                </motion.div>
             </motion.li>
         );
     });
 
     return (
-        <div className='mt-20 flex flex-col gap-3'>
+        <div className='mt-12 md:mt-20 flex flex-col gap-1'>
             <div className='mb-10 border-b border-solid'>
                 <h5 className='text-xs uppercase text-secondary-foreground'>
                     Navigation

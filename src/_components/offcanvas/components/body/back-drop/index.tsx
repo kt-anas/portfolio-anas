@@ -50,7 +50,7 @@ export function OffcanvasBackdrop() {
 
     return (
         <motion.svg
-            className="absolute right-[550px] top-0 h-full w-24 fill-foreground stroke-none"
+            className="absolute right-[300px] md:right-[530px] top-0 h-full w-24 fill-foreground stroke-none"
             viewBox={`0 0 200 ${windowHeight}`}
             preserveAspectRatio="none"
         >
