@@ -1,25 +1,25 @@
 'use client';
 
-import { useRef, type Dispatch, type SetStateAction } from 'react';
+import { useRef } from 'react';
 import { motion } from 'framer-motion';
 
 import { MagneticButton } from '@/src/_components/FlotButton/magnetic';
 import { useOffcanvasToggle } from '@/src/_hooks/use-offcanvas-toggle';
+import { useOffcanvasStore } from '@/src/store/offcanvas';
 import { cn } from '@/src/_utils';
 
 import classes from './index.module.css';
 
-type OffcanvasToggleProps = {
-    isOpen: boolean;
-    handleOpen: Dispatch<SetStateAction<boolean>>;
-};
+export function OffcanvasToggle() {
+    const isOpen = useOffcanvasStore((state) => state.isOpen);
+    const toggleMenu = useOffcanvasStore((state) => state.toggleMenu);
+    const closeMenu = useOffcanvasStore((state) => state.closeMenu);
 
-export function OffcanvasToggle({ isOpen, handleOpen }: OffcanvasToggleProps) {
     const containerRef = useRef<HTMLDivElement | null>(null);
 
     const { scrollYProgress } = useOffcanvasToggle({
         element: containerRef,
-        callback: (latest: number) => latest <= 1 && handleOpen(false),
+        callback: (latest: number) => latest <= 1 && closeMenu(),
     });
 
     return (
@@ -37,7 +37,7 @@ export function OffcanvasToggle({ isOpen, handleOpen }: OffcanvasToggleProps) {
                 size='md'
                 variant='ghost'
                 className='border border-solid border-muted-foreground'
-                onClick={() => handleOpen(!isOpen)}
+                onClick={toggleMenu}
             >
                 <span
                     className={cn([classes.burger], [isOpen && classes.burgerActive])}

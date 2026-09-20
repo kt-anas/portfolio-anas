@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Dot } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useOffcanvasStore } from '@/src/store/offcanvas';
 
 
 import { scale, slideOut } from './variants';
@@ -13,7 +14,9 @@ import { navItems } from '@/src/_data';
 export function OffcanvasLinks() {
     const pathname = usePathname();
     const [activeLink, setActiveLink] = useState(pathname);
-
+    const closeMenu = useOffcanvasStore(
+        (state) => state.closeMenu
+    );
     const items = navItems.map(({ href, title }, index) => {
         const id = index;
         return (
@@ -27,7 +30,7 @@ export function OffcanvasLinks() {
                 exit='exit'
                 onPointerEnter={() => setActiveLink(href)}
             >
-                <Link href={href} className='text-4xl md:text-6xl capitalize'>
+                <Link onClick={closeMenu} href={href} className='text-4xl md:text-6xl capitalize'>
                     {title}
                 </Link>
                 <motion.div

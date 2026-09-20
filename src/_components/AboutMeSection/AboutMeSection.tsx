@@ -23,7 +23,7 @@ const AboutMeSection = () => {
                     <TextAnimation
                         as='div'
                         text={[
-                            "I'm a Front-End Developer focused on building modern, interactive, and high-performance web experiences.",
+                            "I'm a Web Developer focused on building modern, interactive, and high-performance web experiences.",
                             "I enjoy turning ideas and designs into clean, responsive interfaces that feel smooth and intuitive to use.",
                         ]}
                         variants={fadeUpBlur}

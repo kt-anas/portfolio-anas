@@ -33,7 +33,7 @@ const WorkSection = () => {
 
                     {/* LEFT SIDE */}
                     <div className="relative">
-                        <div className="sticky top-[80px] grid place-content-start md:top-[135px]">
+                        <div className="sticky top-[80px] grid place-content-start md:top-[135px]  mb-[40px]">
                             <TextAnimation
                                 as="h1"
                                 letterAnime={true}

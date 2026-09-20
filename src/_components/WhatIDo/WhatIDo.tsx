@@ -13,27 +13,27 @@ const fadeUpBlur = {
 const services = [
     {
         number: '01.',
-        title: 'WEB DEVELOPMENT',
+        title: 'DEVELOPMENT',
         description:
-            'Building fast, responsive and interactive websites using modern technologies, with a strong focus on performance, usability and visual quality.',
+            'I transform the design into a living, fluid web experience. With Framer, I build everything to load fast, run stable, and allow you to update content yourself anytime.',
         image:
             'https://wp.aqlova.com/aleric/personal-portfolio/wp-content/uploads/sites/12/2025/11/pp-3.jpg',
         tags: ['Next.js', 'React', 'GSAP'],
     },
     {
         number: '02.',
-        title: 'UI/UX DESIGN',
+        title: 'DESIGN',
         description:
-            'Whether you need stunning visuals for your website, captivating graphics for your marketing materials, or innovative UI/UX designs for your app, our team of experts is here to turn your vision into reality.',
+            'Every successful website starts with a clear plan. Guided by this plan, I design websites that evoke emotions, build trust, and strategically turn visitors into customers.',
         image:
             'https://wp.aqlova.com/aleric/personal-portfolio/wp-content/uploads/sites/12/2025/11/pp.jpg',
         tags: ['UX Design', 'User Testing', 'Motion Design'],
     },
     {
         number: '03.',
-        title: 'USER RESEARCH',
+        title: 'SEO',
         description:
-            'I create meaningful digital experiences by understanding users, their needs, behaviours, and goals, turning research into clear and useful design decisions.',
+            'Your website shouldn\'t just look good, but it should also be found.I optimize your website so you generate more organic traffic and reach your target audience.',
         image:
             'https://wp.aqlova.com/aleric/personal-portfolio/wp-content/uploads/sites/12/2025/11/pp-2.jpg',
         tags: ['User Research', 'Usability Testing', 'User Interviews'],

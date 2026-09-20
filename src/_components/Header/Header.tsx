@@ -3,23 +3,24 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Dot } from "lucide-react";
-import Button from "../Button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { scale, slideOut } from "./variants";
+import { useOffcanvasStore } from "@/src/store/offcanvas";
 
 const Header = () => {
-    const [active, setActive] = useState<string | null>(null);
+
     const pathname = usePathname();
     const [activeLink, setActiveLink] = useState(pathname);
 
     const navItems = [
-        { href: "/", title: "Home" },
         { href: "#work", title: "Work" },
         { href: "#about", title: "About" },
         { href: "#contact", title: "Contact" },
     ];
-
+    const toggleMenu = useOffcanvasStore(
+        (state) => state.toggleMenu
+    );
     const items = navItems.map(({ href, title }, index) => {
         const id = index;
         return (
@@ -55,7 +56,7 @@ const Header = () => {
             <header>
                 <div className="w-full  flex items-center justify-between">
                     <div className="container-fluid flex items-center  justify-between h-19">
-                        <div className="font-bold text-4xl">ANAS.</div>
+                        <Link href="/" className="font-bold text-4xl">ANAS.</Link>
 
                         <ul className="hidden items-center gap-6 md:flex">
                             {items}
@@ -66,7 +67,7 @@ const Header = () => {
                         </div> */}
                         <button
                             type="button"
-
+                            onClick={toggleMenu}
                             className="flex items-center gap-1 text-lg font-medium uppercase md:hidden"
                             aria-label="Toggle menu"
                         >

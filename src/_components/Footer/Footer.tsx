@@ -52,9 +52,9 @@ const Footer = () => {
                 </div>
 
                 <div className='mt-10 flex flex-col gap-8 text-black md:flex-row md:items-center md:justify-between'>
-                    <div className='flex items-center gap-3'>
+                    <Link href='/' className='flex items-center gap-3'>
                         <span className='text-2xl font-black tracking-[-0.08em]'>ANAS.</span>
-                    </div>
+                    </Link>
 
                     <div className='flex flex-wrap items-center gap-3 text-sm text-black/70'>
                         <MagneticButton
