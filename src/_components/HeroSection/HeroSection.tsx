@@ -16,7 +16,7 @@ const fadeUpBlur = {
 const HeroSection = () => {
 
     return (
-        <section className="relative min-h-screen pt-24">
+        <section className="relative min-h-screen pt-5 md:pt-24">
             <div
                 className="
                     container-fluid
@@ -25,7 +25,6 @@ const HeroSection = () => {
                     flex-col
                     justify-end
                     pb-10
-
                     sm:pb-12
                     md:pb-16
                 "
@@ -45,7 +44,7 @@ const HeroSection = () => {
                     as="h1"
                     text="WEB DEVELOPER & DESIGNER."
                     variants={fadeUpBlur}
-                    classname="mt-5 uppercase  text-[70px] sm:text-[90px] md:text-[120px]  lg:text-[200px] leading-[1] font-medium tracking-[-4px]"
+                    classname="mt-5 uppercase  text-[65px] sm:text-[90px] md:text-[120px]  lg:text-[200px] leading-[1] font-medium tracking-[-4px]"
                     breakAfter={['DEVELOPER']}
 
                 />
