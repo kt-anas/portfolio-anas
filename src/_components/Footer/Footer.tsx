@@ -73,7 +73,7 @@ const Footer = () => {
                             className='h-[10px]  rounded-full border border-black/40 bg-transparent text-black hover:text-white before:bg-black '
                             data-cursor='white'
                         >
-                            <a href='tel:+90 790 910 9268'>+90 790 910 9268</a>
+                            <a href='tel:+90 790 910 9268'>+91 790 910 9268</a>
                         </MagneticButton>
                     </div>
                 </div>
