@@ -16,15 +16,15 @@ const fadeUpBlur = {
 const HeroSection = () => {
 
     return (
-        <section className="relative min-h-screen flex justify-end pt-0 md:pt-24">
+        <section className="relative min-h-screen pt-5 md:pt-24">
             <div
                 className="
                     container-fluid
                     flex
-                    
+                    min-h-[calc(100vh-6rem)]
                     flex-col
                     justify-end
-                    pb-20
+                    pb-10
                     sm:pb-12
                     md:pb-16
                 "
