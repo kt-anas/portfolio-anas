@@ -63,7 +63,7 @@ const WhatIDo = () => {
                 </div>
                 <div className="w-full">
 
-                    {services.map((service, index) => (
+                    {services.map((service) => (
                         <section
                             key={service.number}
                             className="container-fluid sticky top-0 min-h-screen w-full border-t border-white/20 bg-black py-10"
@@ -85,7 +85,8 @@ const WhatIDo = () => {
                                         <h2
                                             className="
                                                 max-w-[900px]
-                                                text-[60px]
+                                                text-[48px]
+                                                sm:text-[60px]
                                                 font-medium
                                                 uppercase
                                                 leading-[0.95]

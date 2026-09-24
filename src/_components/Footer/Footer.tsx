@@ -1,8 +1,13 @@
+"use client"
 import Link from 'next/link'
-import Button from '../Button'
 import { MagneticButton } from '../FlotButton'
 import { FaGithub, FaDribbble, FaInstagram, FaLinkedinIn } from 'react-icons/fa6'
-import { randomId } from '@/src/_utils'
+import { useState } from 'react';
+import { motion } from "framer-motion";
+import { scale, slideOut } from './variants';
+import { Dot } from "lucide-react";
+import { usePathname } from 'next/navigation';
+
 
 const socialLinks = [
 
@@ -11,12 +16,56 @@ const socialLinks = [
     { href: '#', label: 'Instagram', icon: FaInstagram },
 ]
 
-const Footer = () => {
+const navItems = [
+    { href: "/", title: "Home" },
+    { href: "#work", title: "Work" },
+    { href: "#about", title: "About" },
+    { href: "#contact", title: "Contact" },
+];
 
-    const id = randomId();
+
+
+const Footer = () => {
+    const pathname = usePathname();
+    const [activeLink, setActiveLink] = useState(pathname);
+
+
+    const items = navItems.map(({ href, title }, index) => {
+        const id = index;
+        return (
+            <motion.li
+                key={id}
+                className='relative mb-1 flex  items-center'
+                variants={slideOut}
+
+                custom={id}
+                initial='initial'
+                animate='enter'
+                exit='exit'
+                onPointerEnter={() => setActiveLink(href)}
+            >
+                <Link href={href} className="flex items-center uppercase  text-lg font-medium tracking-tight">
+                    {title}
+                </Link>
+                <motion.div
+                    className="
+        ml-6 flex items-center
+        md:absolute md:left-full md:top-1/2
+        md:ml-6 md:-translate-y-1/2
+    "
+                    variants={scale}
+
+                    animate={activeLink === href ? 'open' : 'closed'}
+                >
+                    <Dot size={36} />
+                </motion.div>
+
+            </motion.li>
+        );
+    });
 
     return (
-        <footer id='contact' className='h-screen border-t border-black/10 bg-[#FFFFFF]'>
+        <footer id='contact' className='min-h-screen border-t border-black/10 bg-[#FFFFFF]'>
             <div className='container px-6 py-16 md:px-8 lg:px-12'>
                 <div className="flex flex-col items-center justify-center border-b border-black/10 pb-10 text-center">
                     <div className="max-w-2xl">
@@ -24,7 +73,7 @@ const Footer = () => {
                             Let’s build something bold
                         </p>
 
-                        <h2 className="text-[5.063rem] leading-[5.063rem] tracking-[-0.06em]  xl:text-[9.063rem] font-medium xl:leading-[9.063rem] xl:tracking-[-0.06em] text-black">
+                        <h2 className="text-[3rem] leading-[5.063rem] tracking-[-0.06em]  xl:text-[9.063rem] font-medium xl:leading-[9.063rem] xl:tracking-[-0.06em] text-black">
                             Let’s Work
                             <br />
                             Together.
@@ -52,9 +101,18 @@ const Footer = () => {
                 </div>
 
                 <div className='mt-10 flex flex-col gap-8 text-black md:flex-row md:items-center md:justify-between'>
-                    <Link href='/' className='flex items-center gap-3'>
-                        <span className='text-2xl font-black tracking-[-0.08em]'>ANAS.</span>
-                    </Link>
+                    <div className='flex flex-col md:flex-row gap-20 md:gap-25'>
+
+                        <Link href='/' className='flex items-start gap-3'>
+                            <span className='text-2xl font-black tracking-[-0.08em]'>ANAS.</span>
+                        </Link>
+                        <nav  >
+                            <ul className="flex flex-col gap-1">
+                                {items}
+                            </ul>
+                        </nav>
+                    </div>
+
 
                     <div className='flex flex-wrap items-center gap-3 text-sm text-black/70'>
                         <MagneticButton
@@ -78,7 +136,7 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className='mt-8 flex flex-col gap-3 border-t border-black/10 pt-6 text-sm text-black/50 md:flex-row md:items-center md:justify-between'>
+                <div className='mt-8 flex flex-row   gap-3 border-t border-black/10 pt-6 text-sm text-black/50    items-center  justify-between'>
                     <span>© {new Date().getFullYear()} | Anas.</span>
                     <div className='flex items-center gap-5'>
                         <a href='#' className='transition-opacity hover:opacity-80'>Privacy</a>

@@ -13,7 +13,7 @@ const fadeUpBlur = {
 
 const AboutMeSection = () => {
     return (
-        <section id='about' className='overflow-hidden border-y border-white/10 bg-[#050505]'>
+        <section id='about' className='overflow-hidden bg-[#050505]'>
             <div className=' container-fluid grid min-h-[45rem] grid-cols-1 lg:grid-cols-[1.25fr_0.75fr]'>
                 <div className='flex flex-col justify-center py-12 pr-6 md:pr-10 lg:pr-14'>
                     <p className='mb-8 text-[11px] font-medium uppercase tracking-[0.35em] text-white/65'>
@@ -47,7 +47,7 @@ const AboutMeSection = () => {
                     </div> */}
                 </div>
 
-                <div className='relative min-h-[26.25rem] bg-[#d8d5d0]'>
+                <div className='relative -mx-6 min-h-[26.25rem] bg-[#d8d5d0] md:-mx-8 lg:mx-0 lg:-mr-25'>
                     <div className='absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.4),transparent_38%)]' />
 
                     <img
