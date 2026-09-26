@@ -1,5 +1,6 @@
 import { ReactLenis } from 'lenis/react';
-import TextAnimation from '../TextAnimation';
+import TextAnimation from '@/src/TextAnimation';
+
 import Button from '../Button';
 const fadeUpBlur = {
     hidden: { filter: 'blur(10px)', opacity: 0, y: 20 },
@@ -54,10 +55,10 @@ const WhatIDo = () => {
                         as='div'
                         text="I help brands build intuitive and user-friendly digital products through a strategic design approach."
                         variants={fadeUpBlur}
-                        itemAs='p'
-                        classname='w-full md:max-w-[70%] lg:max-w-[65%]'
-                        itemClassname='text-[clamp(2.2rem,4vw,5rem)] font-medium leading-[0.95] tracking-[-0.06em] text-white'
-                        wordStagger={0.08}
+
+                        classname='w-full md:max-w-[70%] lg:max-w-[65%] text-[clamp(2.2rem,4vw,5rem)] font-medium normal-case leading-[0.95] tracking-[-0.06em] text-white'
+
+
                     />
 
                 </div>

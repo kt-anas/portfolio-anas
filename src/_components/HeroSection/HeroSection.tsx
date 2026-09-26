@@ -1,5 +1,5 @@
+import TextAnimation from "@/src/TextAnimation";
 
-import TextAnimation from "../TextAnimation";
 
 
 const fadeUpBlur = {
@@ -45,7 +45,7 @@ const HeroSection = () => {
                     text="WEB DEVELOPER & DESIGNER."
                     variants={fadeUpBlur}
                     classname="mt-5 uppercase  text-[60px] sm:text-[90px] md:text-[120px]  lg:text-[200px] leading-[1] font-medium tracking-[-4px]"
-                    breakAfter={['DEVELOPER']}
+
 
                 />
 

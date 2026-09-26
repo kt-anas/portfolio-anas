@@ -1,7 +1,7 @@
 import { ReactLenis } from 'lenis/react';
 
 import { MagneticButton } from '../FlotButton';
-import TextAnimation from '../TextAnimation';
+import TextAnimation from '@/src/TextAnimation';
 
 const works = [
     {
@@ -37,23 +37,10 @@ const WorkSection = () => {
                             <TextAnimation
                                 as="h1"
                                 letterAnime={true}
+                                direction="left"
                                 text="WORK"
-                                itemClassname="text-[85px] md:text-[145px] uppercase pb-8 font-medium text-right tracking-tight leading-[1.6]"
-                                variants={{
-                                    hidden: {
-                                        filter: 'blur(4px)',
-                                        opacity: 0,
-                                        y: 20,
-                                    },
-                                    visible: {
-                                        filter: 'blur(0px)',
-                                        opacity: 1,
-                                        y: 0,
-                                        transition: {
-                                            duration: 0.2,
-                                        },
-                                    },
-                                }}
+                                classname="text-[85px] md:text-[145px] uppercase pb-8 font-medium text-right tracking-tight leading-[1.6]"
+
                             />
 
                             <MagneticButton

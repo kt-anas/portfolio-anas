@@ -1,15 +1,26 @@
-import TextAnimation from "../TextAnimation"
+import TextAnimation from "@/src/TextAnimation";
+
 
 
 const fadeUpBlur = {
-    hidden: { filter: 'blur(10px)', opacity: 0, y: 20 },
+    hidden: {
+        filter: 'blur(10px)',
+        opacity: 0,
+        y: 20,
+    },
+
     visible: {
         filter: 'blur(0px)',
         opacity: 1,
         y: 0,
-        transition: { ease: 'linear' },
+
+        transition: {
+            duration: 0.5,
+            ease: 'linear',
+        },
     },
 };
+
 
 const AboutMeSection = () => {
     return (
@@ -22,20 +33,26 @@ const AboutMeSection = () => {
 
                     <TextAnimation
                         as='div'
-                        text={[
-                            "I'm a Web Developer focused on building modern, interactive, and high-performance web experiences.",
-                            "I enjoy turning ideas and designs into clean, responsive interfaces that feel smooth and intuitive to use.",
-                        ]}
+                        delay={0}
+                        text=
+                        "I'm a Web Developer focused on building modern, interactive, and high-performance web experiences."
                         variants={fadeUpBlur}
-                        itemAs='p'
-                        gapClassname='space-y-7'
-                        itemClassname='text-[clamp(2.2rem,4vw,5rem)] font-medium leading-[0.9] tracking-[-0.06em] text-white normal-case'
-                        staggerMode='sequential'
-                        wordStagger={0.08}
-                        lineGap={0.25}
+                        classname='text-[clamp(2.2rem,4vw,5rem)] font-medium leading-[0.9] tracking-[-0.06em] text-white normal-case'
+
+
+                    /><br />
+
+                    <TextAnimation
+                        as='div'
+                        text="I enjoy turning ideas and designs into clean, responsive interfaces that feel smooth and intuitive to use."
+                        variants={fadeUpBlur}
+                        delay={0.9}
+
+                        classname='text-[clamp(2.2rem,4vw,5rem)] font-medium leading-[0.9] tracking-[-0.06em] text-white normal-case'
+
+
+
                     />
-
-
 
                     {/* <div className='mt-10'>
                         <a

@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { MagneticButton } from '../FlotButton'
 import { FaGithub, FaDribbble, FaInstagram, FaLinkedinIn } from 'react-icons/fa6'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
 import { scale, slideOut } from './variants';
 import { Dot } from "lucide-react";
@@ -28,7 +28,29 @@ const navItems = [
 const Footer = () => {
     const pathname = usePathname();
     const [activeLink, setActiveLink] = useState(pathname);
+    const [time, setTime] = useState('');
 
+    useEffect(() => {
+        const updateTime = () => {
+            const now = new Date();
+
+            const formattedTime = now.toLocaleTimeString('en-IN', {
+                hour12: false,
+                timeZone: 'Asia/Kolkata',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+            });
+
+            setTime(formattedTime);
+        };
+
+        updateTime();
+
+        const interval = setInterval(updateTime, 1000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     const items = navItems.map(({ href, title }, index) => {
         const id = index;
@@ -37,7 +59,6 @@ const Footer = () => {
                 key={id}
                 className='relative mb-1 flex  items-center'
                 variants={slideOut}
-
                 custom={id}
                 initial='initial'
                 animate='enter'
@@ -48,10 +69,7 @@ const Footer = () => {
                     {title}
                 </Link>
                 <motion.div
-                    className="
-        ml-6 flex items-center
-        md:absolute md:left-full md:top-1/2
-        md:ml-6 md:-translate-y-1/2
+                    className=" ml-6 flex items-center md:absolute md:left-full md:top-1/2  md:ml-6 md:-translate-y-1/2
     "
                     variants={scale}
 
@@ -65,8 +83,8 @@ const Footer = () => {
     });
 
     return (
-        <footer id='contact' className='min-h-screen border-t border-black/10 bg-[#FFFFFF]'>
-            <div className='container px-6 py-16 md:px-8 lg:px-12'>
+        <footer id='contact' className='min-h-screen border-t border-black/10 bg-[#FFFFFF] pt-5 md:pt-24 '>
+            <div className='container-fluid   min-h-[calc(100vh-6rem)] flex flex-col '>
                 <div className="flex flex-col items-center justify-center border-b border-black/10 pb-10 text-center">
                     <div className="max-w-2xl">
                         <p className="mb-3 text-sm uppercase tracking-[0.2em] text-black/60">
@@ -106,11 +124,7 @@ const Footer = () => {
                         <Link href='/' className='flex items-start gap-3'>
                             <span className='text-2xl font-black tracking-[-0.08em]'>ANAS.</span>
                         </Link>
-                        <nav  >
-                            <ul className="flex flex-col gap-1">
-                                {items}
-                            </ul>
-                        </nav>
+
                     </div>
 
 
@@ -136,12 +150,15 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className='mt-8 flex flex-row   gap-3 border-t border-black/10 pt-6 text-sm text-black/50    items-center  justify-between'>
-                    <span>© {new Date().getFullYear()} | Anas.</span>
+                <div className='mt-auto mb-5 flex flex-row gap-3 border-t border-black/10 pt-6 text-sm text-black/50 items-center justify-between'>
+
                     <div className='flex items-center gap-5'>
-                        <a href='#' className='transition-opacity hover:opacity-80'>Privacy</a>
-                        <a href='#' className='transition-opacity hover:opacity-80'>Terms</a>
+                        <span>© {new Date().getFullYear()} | Anas.</span>
+                        <span>
+                            IST - {time}
+                        </span>
                     </div>
+
                 </div>
             </div>
         </footer>
