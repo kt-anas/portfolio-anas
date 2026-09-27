@@ -1,6 +1,8 @@
 'use client';
 
-import TextAnimation from "../TextAnimation";
+import TextAnimation from "@/src/TextAnimation";
+
+
 
 
 function ScrollTextAnimation() {
