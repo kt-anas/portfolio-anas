@@ -83,22 +83,58 @@ const Footer = () => {
     });
 
     return (
-        <footer id='contact' className='min-h-screen border-t border-black/10 bg-[#FFFFFF] pt-5 md:pt-24 '>
+        <footer id='contact' className='min-h-screen bg-[#FFFFFF] pt-5 md:pt-24 '>
             <div className='container-fluid   min-h-[calc(100vh-6rem)] flex flex-col '>
-                <div className="flex flex-col items-center justify-center border-b border-black/10 pb-10 text-center">
-                    <div className="max-w-2xl">
-                        <p className="mb-3 text-sm uppercase tracking-[0.2em] text-black/60">
-                            Let’s build something bold
-                        </p>
+                <div className="flex flex-col   pb-10">
 
-                        <h2 className="text-[3rem] leading-[5.063rem] tracking-[-0.06em]  xl:text-[9.063rem] font-medium xl:leading-[9.063rem] xl:tracking-[-0.06em] text-black">
-                            Let’s Work
-                            <br />
-                            Together.
-                        </h2>
+                    <p className="mb-3 text-[0.75rem] md:text-[1rem] uppercase tracking-[0.2em] text-black/60">
+                        Let’s build something bold
+                    </p>
+
+                    <h2 className="text-[3rem] leading-[4.063rem] tracking-[-0.06em]  xl:text-[9.063rem] font-medium xl:leading-[9.063rem] xl:tracking-[-0.06em] text-black">
+                        Let’s Work
+
+                        Together.
+                    </h2>
+
+
+                </div>
+
+                <div className='mt-16 flex flex-col gap-8 text-black md:flex-row md:items-center md:justify-between'>
+
+
+
+                    <div className='flex flex-wrap items-center gap-3 text-sm text-black/70'>
+                        <MagneticButton
+                            size='md'
+                            variant='outlinePill'
+                            className='h-[10px]  not-last-of-type: rounded-full border w-full  md:w-auto border-black/40 bg-transparent text-black hover:text-white before:bg-black'
+                            data-cursor='white'
+                        >
+                            <a href='mailto:muhanaskt@gmail.com' className='transition-opacity hover:opacity-80'>
+                                muhanaskt@gmail.com
+                            </a>
+                        </MagneticButton>
+                        <MagneticButton
+                            size='md'
+                            variant='outlinePill'
+                            className='h-[10px]  rounded-full border border-black/40 bg-transparent w-full  md:w-auto text-black hover:text-white before:bg-black '
+                            data-cursor='white'
+                        >
+                            <a href='tel:+90 790 910 9268'>+91 790 910 9268</a>
+                        </MagneticButton>
                     </div>
+                </div>
 
-                    <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+                <div className='mt-auto mb-0 md:mb-5 flex flex-col-reverse md:flex-row gap-3   pt-5 text-sm text-black/50 items-end justify-between'>
+
+                    <div className='flex items-center mt-8 md:mt-0  justify-between w-full md:w-auto   gap-5'>
+                        <span>© {new Date().getFullYear()} | Anas.</span>
+                        <span>
+                            IST - {time}
+                        </span>
+                    </div>
+                    <div className=" flex w-full md:w-auto items-center justify-center gap-2 md:gap-4">
                         {socialLinks.map(({ href, label, icon: Icon }) => (
                             <div key={label}>
                                 <Link
@@ -116,49 +152,6 @@ const Footer = () => {
                             </div>
                         ))}
                     </div>
-                </div>
-
-                <div className='mt-10 flex flex-col gap-8 text-black md:flex-row md:items-center md:justify-between'>
-                    <div className='flex flex-col md:flex-row gap-20 md:gap-25'>
-
-                        <Link href='/' className='flex items-start gap-3'>
-                            <span className='text-2xl font-black tracking-[-0.08em]'>ANAS.</span>
-                        </Link>
-
-                    </div>
-
-
-                    <div className='flex flex-wrap items-center gap-3 text-sm text-black/70'>
-                        <MagneticButton
-                            size='md'
-                            variant='outlinePill'
-                            className='h-[10px]  not-last-of-type: rounded-full border border-black/40 bg-transparent text-black hover:text-white before:bg-black'
-                            data-cursor='white'
-                        >
-                            <a href='mailto:muhanaskt@gmail.com' className='transition-opacity hover:opacity-80'>
-                                muhanaskt@gmail.com
-                            </a>
-                        </MagneticButton>
-                        <MagneticButton
-                            size='md'
-                            variant='outlinePill'
-                            className='h-[10px]  rounded-full border border-black/40 bg-transparent text-black hover:text-white before:bg-black '
-                            data-cursor='white'
-                        >
-                            <a href='tel:+90 790 910 9268'>+91 790 910 9268</a>
-                        </MagneticButton>
-                    </div>
-                </div>
-
-                <div className='mt-auto mb-5 flex flex-row gap-3 border-t border-black/10 pt-6 text-sm text-black/50 items-center justify-between'>
-
-                    <div className='flex items-center gap-5'>
-                        <span>© {new Date().getFullYear()} | Anas.</span>
-                        <span>
-                            IST - {time}
-                        </span>
-                    </div>
-
                 </div>
             </div>
         </footer>

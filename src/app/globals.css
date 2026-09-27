@@ -231,8 +231,13 @@
   }
   a,button{
         transition: 0.3s all linear;
-
-
+  }
+/* ///////////////////////////////////////////////////////////////////////////////// */
+  @media (min-width: 768px) and (hover: hover) and (pointer: fine) {
+    
+    input, textarea, [contenteditable="true"] {
+      cursor: text !important;
+    }
   }
 
   .white-btn{

@@ -19,8 +19,7 @@ type MagneticButtonProps = Omit<HTMLMotionProps<'button'>, 'children'> & {
     scaleOnHover?: boolean;
 };
 
-const cn = (...classes: Array<string | false | null | undefined>) =>
-    classes.filter(Boolean).join(' ');
+import { cn } from '@/src/_utils';
 
 export function MagneticButton({
     children,

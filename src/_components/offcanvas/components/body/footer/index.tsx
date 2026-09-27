@@ -28,5 +28,5 @@ export function OffcanvasFooter() {
         );
     });
 
-    return <ul className='flex flex-wrap gap-4'>{medias}</ul>;
+    return <ul className='flex  gap-2 md:gap-4'>{medias}</ul>;
 }
