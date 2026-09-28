@@ -100,8 +100,8 @@ export const worksData: Work[] = [
 
 export const workCategories: WorkCategory[] = [
     'All',
-    'React / Next.js',
-    'Shopify',
     'WebFlow / Framer',
+    'Shopify',
+    'React / Next.js',
     'Playground',
 ];

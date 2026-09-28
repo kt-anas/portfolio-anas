@@ -3,37 +3,14 @@ import Link from 'next/link';
 
 import { MagneticButton } from '../FlotButton';
 import TextAnimation from '@/src/TextAnimation';
+import { worksData, workCategories } from "@/src/_data/works-data";
 
-const works = [
-    {
-        image:
-            './images/screen-shot-copy.png',
-        title: 'Adam',
-        showTitle: true,
-        subtitle: 'Personal Portfolio',
-        bgColor: '#f5f5f5',
-        rounded: false,
-    },
-    {
-        image:
-            'https://wp.aqlova.com/aleric/personal-portfolio/wp-content/uploads/sites/12/2025/12/thumb-2.jpg',
-        rounded: false,
-    },
-    // {
-    //     image:
-    //         'https://images.unsplash.com/photo-1685904042960-66242a0ac352?w=500&auto=format&fit=crop',
-    // },
-    // {
-    //     image:
-    //         'https://images.unsplash.com/photo-1718838541476-d04e71caa347?w=500&auto=format&fit=crop',
-    //     rounded: true,
-    // },
-];
+
 
 const WorkSection = () => {
     return (
         <ReactLenis root>
-            <section id="work" className="w-full bg-white">
+            <section id="work" className="w-full min-h-screen bg-white">
                 <div className="container-fluid grid grid-cols-1 pt-[40px] md:grid-cols-2 md:pt-[80px]">
 
                     {/* LEFT SIDE */}
@@ -86,7 +63,7 @@ const WorkSection = () => {
                     {/* RIGHT SIDE */}
                     <div className="relative grid ">
 
-                        {works.map((work, index) => (
+                        {worksData.slice(0, 3).map((work, index) => (
                             <figure
                                 key={index}
                                 className={`sticky top-[80px]  bg-white  cursor-none place-content-start md:top-[135px]`}
@@ -98,17 +75,17 @@ const WorkSection = () => {
                                     src={work.image}
                                     alt={work.title || `Work ${index + 1}`}
 
-                                    className={`block w-full object-cover transition-all duration-300 ${work.rounded ? 'rounded-md' : ''
-                                        }`}
+                                    className="block w-full object-cover transition-all duration-300 "
+
                                     data-cursor="white"
                                     data-cursor-label="View"
                                 />
 
-                                {work.showTitle && work.title && (
-                                    <div className="py-6">
-                                        <h2 className="inline-block cursor-pointer  leading-tight tracking-tight leading-tight tracking-tight  text-[22px] font-medium">
-                                            <span
-                                                className="
+
+                                <div className="py-6">
+                                    <h2 className="inline-block cursor-pointer  leading-tight tracking-tight leading-tight tracking-tight  text-[22px] font-medium">
+                                        <span
+                                            className="
                                                 relative
                                                 inline-block
                                                 after:absolute
@@ -124,14 +101,14 @@ const WorkSection = () => {
                                                 after:ease-out
                                                 hover:after:scale-x-100
                                             "
-                                            >
-                                                {work.title}
-                                            </span>
-                                        </h2>
-                                        <p className="text-[14px] text-black/50 mt-0.5">{work.subtitle}</p>
-                                    </div>
+                                        >
+                                            {work.title}
+                                        </span>
+                                    </h2>
+                                    <p className="text-[14px] text-black/50 mt-0.5">{work.subtitle}</p>
+                                </div>
 
-                                )}
+
                             </figure>
                         ))}
                     </div>
