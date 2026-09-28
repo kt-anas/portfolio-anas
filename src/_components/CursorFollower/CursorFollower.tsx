@@ -36,7 +36,7 @@ export function CursorFollower() {
             const target = event.target;
 
             if (target instanceof Element) {
-                // Interactive / clickable elements (links, buttons, inputs)
+                // Interactive / clickable elements (links, buttons, inpu   ts)
                 const isClickable = Boolean(
                     target.closest(
                         'a, button, [role="button"], input, textarea, select, [data-cursor="pointer"]'

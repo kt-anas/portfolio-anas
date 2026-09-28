@@ -40,13 +40,13 @@ export default function AllWorksPage() {
     return (
         <main className="works-page min-h-screen bg-white] border-b border-black/10">
             {/* ── TOP BAR ── */}
-            <div className="works-topbar container-fluid flex flex-wrap items-center gap-y-3 py-8 border-b border-black/10">
-                <h1 className="works-heading text-[clamp(2rem,5vw,3.5rem)] font-normal tracking-tighter uppercase mr-8 leading-none">
+            <div className="works-topbar container-fluid flex  flex-col md:flex-row items-center gap-y-3 py-8 border-b border-black/10">
+                <h1 className="works-heading w-full md:w-auto text-[clamp(2rem,5vw,3.5rem)] font-normal items-start tracking-tighter uppercase  md:mr-5 leading-none">
                     All Works
                 </h1>
 
                 {/* Category filters */}
-                <nav className="works-filters flex flex-wrap items-center gap-3 flex-1" aria-label="Work categories">
+                <nav className="works-filters flex flex-col md:flex-row w-full  items-start gap-3 flex-1" aria-label="Work categories">
                     {workCategories.slice(1).map((cat) => (
                         <MagneticButton
                             key={cat}
