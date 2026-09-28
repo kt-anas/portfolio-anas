@@ -1,4 +1,4 @@
-﻿export type WorkCategory = 'All' | 'React / Next.js' | 'WordPress' | 'WebFlow / Framer' | 'Playground';
+﻿export type WorkCategory = 'All' | 'React / Next.js' | 'Shopify' | 'WebFlow / Framer' | 'Playground';
 
 export interface Work {
     id: number;
@@ -49,7 +49,7 @@ export const worksData: Work[] = [
         id: 4,
         title: 'Modevelle',
         subtitle: 'Luxury Fashion Brand',
-        category: 'WordPress',
+        category: 'Shopify',
         image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop&q=80',
         bgColor: '#faf8f5',
         year: '2023',
@@ -60,7 +60,7 @@ export const worksData: Work[] = [
         id: 6,
         title: 'Botanica',
         subtitle: 'Plant Shop Redesign',
-        category: 'WordPress',
+        category: 'Shopify',
         image: 'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&auto=format&fit=crop&q=80',
         bgColor: '#e8f5e9',
         year: '2023',
@@ -101,7 +101,7 @@ export const worksData: Work[] = [
 export const workCategories: WorkCategory[] = [
     'All',
     'React / Next.js',
-    'WordPress',
+    'Shopify',
     'WebFlow / Framer',
     'Playground',
 ];
