@@ -4,11 +4,11 @@ export const navItems = [
         title: 'home',
     },
     {
-        href: '#work',
+        href: '/works',
         title: 'work',
     },
     {
-        href: '#about',
+        href: '/about-me',
         title: 'about',
     },
     {
@@ -16,3 +16,4 @@ export const navItems = [
         title: 'contact',
     },
 ];
+

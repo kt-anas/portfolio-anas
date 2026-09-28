@@ -14,8 +14,8 @@ const Header = () => {
     const [activeLink, setActiveLink] = useState(pathname);
 
     const navItems = [
-        { href: "#work", title: "Work" },
-        { href: "#about", title: "About" },
+        { href: "/works", title: "Work" },
+        { href: "/about-me", title: "About" },
         { href: "#contact", title: "Contact" },
     ];
     const toggleMenu = useOffcanvasStore(

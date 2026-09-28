@@ -8,9 +8,9 @@ const HomePage = () => {
     return (
         <div>
             <HeroSection />
-            <AboutMeSection />
-            <WorkSection />
             <WhatIDo />
+            <WorkSection />
+            <AboutMeSection />
         </div>
     )
 }

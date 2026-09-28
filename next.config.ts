@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
                 protocol: "https",
                 hostname: "wp.aqlova.com",
             },
+            {
+                protocol: "https",
+                hostname: "images.unsplash.com",
+            },
         ],
     },
 };

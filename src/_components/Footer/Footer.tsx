@@ -18,11 +18,10 @@ const socialLinks = [
 
 const navItems = [
     { href: "/", title: "Home" },
-    { href: "#work", title: "Work" },
+    { href: "/works", title: "Work" },
     { href: "#about", title: "About" },
     { href: "#contact", title: "Contact" },
 ];
-
 
 
 const Footer = () => {
