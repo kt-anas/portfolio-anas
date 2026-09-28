@@ -17,7 +17,9 @@ export const worksData: Work[] = [
     {
         id: 1,
         title: 'Adam',
+        subtitle: 'Personal Portfolio',
         category: 'WebFlow / Framer',
+
         image: '/images/screen-shot-copy.png',
         bgColor: '#f5f5f5',
         year: '2024',
