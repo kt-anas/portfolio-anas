@@ -1,13 +1,20 @@
+'use client';
+
+import { useState } from 'react';
 import { ReactLenis } from 'lenis/react';
 import Link from 'next/link';
 
 import { MagneticButton } from '../FlotButton';
+import { ProjectModal } from '../ProjectModal/ProjectModal';
 import TextAnimation from '@/src/TextAnimation';
-import { worksData, workCategories } from "@/src/_data/works-data";
+import { worksData } from "@/src/_data/works-data";
+import type { Work } from '@/src/_data/works-data';
 
 
 
 const WorkSection = () => {
+    const [selectedWork, setSelectedWork] = useState<Work | null>(null);
+
     return (
         <ReactLenis root>
             <section id="work" className="w-full min-h-screen bg-white">
@@ -21,7 +28,7 @@ const WorkSection = () => {
                                 letterAnime={true}
                                 direction="left"
                                 text="WORK"
-                                classname="text-[85px] md:text-[145px] uppercase pb-8 font-medium text-right tracking-tight leading-[1.6]"
+                                classname="text-[85px] md:text-[120px] uppercase pb-8 font-medium text-right tracking-tight leading-[1.6]"
 
                             />
 
@@ -65,8 +72,18 @@ const WorkSection = () => {
 
                         {worksData.slice(0, 3).map((work, index) => (
                             <figure
-                                key={index}
-                                className={`sticky top-[80px]  bg-white  cursor-none place-content-start md:top-[135px]`}
+                                key={work.id}
+                                className={`sticky top-[80px] bg-white cursor-pointer place-content-start md:top-[135px]`}
+                                role="button"
+                                tabIndex={0}
+                                aria-label={`View details for ${work.title}`}
+                                onClick={() => setSelectedWork(work)}
+                                onKeyDown={(event) => {
+                                    if (event.key === 'Enter' || event.key === ' ') {
+                                        event.preventDefault();
+                                        setSelectedWork(work);
+                                    }
+                                }}
 
 
 
@@ -75,7 +92,7 @@ const WorkSection = () => {
                                     src={work.image}
                                     alt={work.title || `Work ${index + 1}`}
 
-                                    className="block w-full object-cover transition-all duration-300 "
+                                    className="block w-full object-cover transition-all duration-300 hover:scale-[1.01]"
 
                                     data-cursor="white"
                                     data-cursor-label="View"
@@ -114,6 +131,8 @@ const WorkSection = () => {
                     </div>
                 </div>
             </section>
+
+            <ProjectModal work={selectedWork} onClose={() => setSelectedWork(null)} />
         </ReactLenis>
     );
 };
