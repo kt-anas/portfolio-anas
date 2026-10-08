@@ -3,14 +3,16 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { worksData, workCategories } from "@/src/_data/works-data";
-import type { WorkCategory } from "@/src/_data/works-data";
+import type { Work, WorkCategory } from "@/src/_data/works-data";
 import { MagneticButton } from "../FlotButton";
+import { ProjectModal } from "../ProjectModal/ProjectModal";
 
 const ITEMS_PER_PAGE = 6;
 
 export default function AllWorksPage() {
     const [activeCategory, setActiveCategory] = useState<WorkCategory>("All");
     const [currentPage, setCurrentPage] = useState(0);
+    const [selectedWork, setSelectedWork] = useState<Work | null>(null);
     const gridRef = useRef<HTMLDivElement>(null);
 
     const filtered =
@@ -114,12 +116,22 @@ export default function AllWorksPage() {
                         {pageItems.map((work, i) => (
                             <motion.article
                                 key={work.id}
-                                className="works-card  group relative overflow-hidden bg-[#ffffff] cursor-none"
+                                className="works-card group relative overflow-hidden bg-[#ffffff] cursor-pointer"
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
                                 data-cursor="white"
                                 data-cursor-label="View"
+                                onClick={() => setSelectedWork(work)}
+                                onKeyDown={(event) => {
+                                    if (event.key === "Enter" || event.key === " ") {
+                                        event.preventDefault();
+                                        setSelectedWork(work);
+                                    }
+                                }}
+                                role="button"
+                                tabIndex={0}
+                                aria-label={`View details for ${work.title}`}
                             >
                                 {/* Image */}
                                 <div
@@ -201,6 +213,8 @@ export default function AllWorksPage() {
                     {filtered.length} Project{filtered.length !== 1 ? "s" : ""}
                 </span>
             </div> */}
+
+            <ProjectModal work={selectedWork} onClose={() => setSelectedWork(null)} />
         </main>
     );
 }
