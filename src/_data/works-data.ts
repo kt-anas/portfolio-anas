@@ -36,7 +36,7 @@ export const worksData: Work[] = [
         image: '/images/modevello.png',
         bgColor: '#1a1a2e',
         year: '2024',
-        tags: ['React', 'Shopify', 'GSAP'],
+        tags: ['React', 'Next.js', 'GSAP'],
         description: 'A fashion-focused e-commerce storefront with a bold visual system, product-first presentation, and smooth shopping experience.',
         link: 'https://modevella-clone.vercel.app',
     },
@@ -47,8 +47,8 @@ export const worksData: Work[] = [
 
 export const workCategories: WorkCategory[] = [
     'All',
-    'WebFlow / Framer',
     'Shopify',
     'React / Next.js',
+    'WebFlow / Framer',
     'Playground',
 ];

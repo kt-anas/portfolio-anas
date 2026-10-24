@@ -48,7 +48,7 @@ export function MagneticButton({
                 type: 'spring',
                 damping: 15,
                 stiffness: 150,
-                mass: 0.1,
+                mass: 1,
             }}
             onPointerMove={handleMagneticMove}
             onPointerOut={handleMagneticOut}
