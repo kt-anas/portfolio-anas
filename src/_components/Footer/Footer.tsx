@@ -105,13 +105,11 @@ const Footer = () => {
 
                     <h2
                         className={cn(
-                            'text-[3rem] leading-[4.063rem] tracking-[-0.06em] xl:text-[9.063rem] font-medium xl:leading-[9.063rem] xl:tracking-[-0.06em]',
+                            'w-full whitespace-nowrap text-[clamp(2.2rem,7.6vw,10.5rem)] font-medium leading-none tracking-[-0.05em]',
                             isContactPage ? 'text-white' : 'text-black'
                         )}
                     >
-                        Let’s Work
-                        <br />
-                        Together.
+                        Let’s Work Together.
                     </h2>
                 </div>
 
