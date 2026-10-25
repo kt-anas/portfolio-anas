@@ -97,7 +97,7 @@ export default function ContactPage() {
         setSubmitError(null);
 
         const accessKey =
-            process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+            process.env.WEB3FORMS_ACCESS_KEY;
 
 
         try {
