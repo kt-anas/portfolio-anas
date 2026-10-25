@@ -43,6 +43,7 @@ export default function ContactPage() {
         message: "",
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitError, setSubmitError] = useState<string | null>(null);
 
     const emailAddress = "muhanaskt@gmail.com";
     const whatsappUrl = "https://wa.me/917909109268?text=Hi%20Anas%2C%20I%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect!";
@@ -90,15 +91,48 @@ export default function ContactPage() {
         });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setSubmitError(null);
 
-        // Smooth simulate submission
-        setTimeout(() => {
+        const accessKey =
+            process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json",
+                },
+                body: JSON.stringify({
+                    access_key: accessKey,
+                    subject: `New Portfolio Inquiry from ${formData.name}`,
+                    from_name: formData.name,
+                    name: formData.name,
+                    email: formData.email,
+                    company: formData.company || "Not provided",
+                    services: formData.services.length > 0 ? formData.services.join(", ") : "None specified",
+                    budget: formData.budget || "Not specified",
+                    message: formData.message || "No message entered",
+                }),
+            });
+
+            const result = await response.json();
+
+            if (result.success) {
+                setStep(3);
+            } else {
+                setSubmitError(result.message || "Failed to send message. Please try again.");
+            }
+        } catch (error) {
+            console.error("Submission error:", error);
+            setSubmitError("Network error. Please try again or reach out on WhatsApp.");
+        } finally {
             setIsSubmitting(false);
-            setStep(3);
-        }, 600);
+        }
     };
 
     const handleReset = () => {
@@ -111,6 +145,7 @@ export default function ContactPage() {
             message: "",
         });
         setErrors({});
+        setSubmitError(null);
         setStep(1);
     };
 
@@ -377,6 +412,12 @@ export default function ContactPage() {
                                             className="w-full bg-transparent border-b border-black/20 py-2 text-base text-black placeholder:text-black/25 focus:outline-none focus:border-black transition-colors duration-200 resize-none"
                                         />
                                     </div>
+
+                                    {submitError && (
+                                        <div className="p-3 border border-red-200 bg-red-50 text-red-600 text-xs tracking-wide">
+                                            {submitError}
+                                        </div>
+                                    )}
 
                                     {/* ACTIONS: BACK & SUBMIT */}
                                     <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
