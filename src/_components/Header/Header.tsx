@@ -11,7 +11,7 @@ import { useOffcanvasStore } from "@/src/store/offcanvas";
 const Header = () => {
 
     const pathname = usePathname();
-    const [activeLink, setActiveLink] = useState(pathname);
+    const [hoveredLink, setHoveredLink] = useState<string | null>(null);
 
     const navItems = [
         { href: "/works", title: "Work" },
@@ -23,6 +23,10 @@ const Header = () => {
     );
     const items = navItems.map(({ href, title }, index) => {
         const id = index;
+        const isActive = hoveredLink !== null
+            ? hoveredLink === href
+            : (pathname === href || (href !== "/" && pathname.startsWith(href)));
+
         return (
             <motion.li
                 key={id}
@@ -33,7 +37,7 @@ const Header = () => {
                 initial='initial'
                 animate='enter'
                 exit='exit'
-                onPointerEnter={() => setActiveLink(href)}
+                onPointerEnter={() => setHoveredLink(href)}
             >
                 <Link href={href} className="flex items-center uppercase  text-lg font-medium tracking-tight">
                     {title}
@@ -42,7 +46,7 @@ const Header = () => {
                     className="absolute top-full left-1/2 -translate-x-1/2"
                     variants={scale}
 
-                    animate={activeLink === href ? 'open' : 'closed'}
+                    animate={isActive ? 'open' : 'closed'}
                 >
                     <Dot size={36} />
                 </motion.div>
@@ -58,7 +62,10 @@ const Header = () => {
                     <div className="container-fluid flex items-center  justify-between h-19">
                         <Link href="/" className="font-bold text-4xl">ANAS.</Link>
 
-                        <ul className="hidden items-center gap-6 md:flex">
+                        <ul
+                            className="hidden items-center gap-6 md:flex"
+                            onPointerLeave={() => setHoveredLink(null)}
+                        >
                             {items}
                         </ul>
 

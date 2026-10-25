@@ -13,12 +13,16 @@ import { navItems } from '@/src/_data';
 
 export function OffcanvasLinks() {
     const pathname = usePathname();
-    const [activeLink, setActiveLink] = useState(pathname);
+    const [hoveredLink, setHoveredLink] = useState<string | null>(null);
     const closeMenu = useOffcanvasStore(
         (state) => state.closeMenu
     );
     const items = navItems.map(({ href, title }, index) => {
         const id = index;
+        const isActive = hoveredLink !== null
+            ? hoveredLink === href
+            : (href === '/' ? pathname === '/' : pathname.startsWith(href));
+
         return (
             <motion.li
                 key={id}
@@ -28,14 +32,14 @@ export function OffcanvasLinks() {
                 initial='initial'
                 animate='enter'
                 exit='exit'
-                onPointerEnter={() => setActiveLink(href)}
+                onPointerEnter={() => setHoveredLink(href)}
             >
                 <Link onClick={closeMenu} href={href} className='text-4xl md:text-6xl capitalize'>
                     {title}
                 </Link>
                 <motion.div
                     variants={scale}
-                    animate={activeLink === href ? 'open' : 'closed'}
+                    animate={isActive ? 'open' : 'closed'}
                     className='flex-shrink-0'
                 >
                     <Dot size={30} />
@@ -51,7 +55,7 @@ export function OffcanvasLinks() {
                     Navigation
                 </h5>
             </div>
-            <ul onPointerLeave={() => setActiveLink(pathname)}>{items}</ul>
+            <ul onPointerLeave={() => setHoveredLink(null)}>{items}</ul>
         </div>
     );
 }
