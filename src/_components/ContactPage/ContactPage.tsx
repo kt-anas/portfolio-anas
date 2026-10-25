@@ -96,8 +96,7 @@ export default function ContactPage() {
         setIsSubmitting(true);
         setSubmitError(null);
 
-        const accessKey =
-            process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+        const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
         try {
             const response = await fetch("https://api.web3forms.com/submit", {
