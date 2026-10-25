@@ -96,19 +96,14 @@ export default function ContactPage() {
         setIsSubmitting(true);
         setSubmitError(null);
 
-        const accessKey =
-            process.env.WEB3FORMS_ACCESS_KEY;
-
-
         try {
-            const response = await fetch("https://api.web3forms.com/submit", {
+            const response = await fetch("/api/contact", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     Accept: "application/json",
                 },
                 body: JSON.stringify({
-                    access_key: accessKey,
                     subject: `New Portfolio Inquiry from ${formData.name}`,
                     from_name: formData.name,
                     name: formData.name,
