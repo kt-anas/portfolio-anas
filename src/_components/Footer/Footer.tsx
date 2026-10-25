@@ -19,8 +19,8 @@ const socialLinks = [
 const navItems = [
     { href: "/", title: "Home" },
     { href: "/works", title: "Work" },
-    { href: "#about", title: "About" },
-    { href: "#contact", title: "Contact" },
+    { href: "/about-me", title: "About" },
+    { href: "/contact", title: "Contact" },
 ];
 
 
@@ -80,6 +80,37 @@ const Footer = () => {
             </motion.li>
         );
     });
+
+    if (pathname === '/contact') {
+        return (
+            <footer className='border-t border-black/10 bg-[#FFFFFF] py-8'>
+                <div className='container-fluid flex flex-col-reverse md:flex-row gap-4 text-sm text-black/50 items-center justify-between'>
+                    <div className='flex items-center justify-between w-full md:w-auto gap-5'>
+                        <span>© {new Date().getFullYear()} | Anas.</span>
+                        <span>IST - {time}</span>
+                    </div>
+                    <div className="flex w-full md:w-auto items-center justify-center gap-2 md:gap-4">
+                        {socialLinks.map(({ href, label, icon: Icon }) => (
+                            <div key={label}>
+                                <Link
+                                    href={href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <MagneticButton>
+                                        <span className="flex items-center gap-3">
+                                            <Icon size={18} />
+                                            {label}
+                                        </span>
+                                    </MagneticButton>
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </footer>
+        );
+    }
 
     return (
         <footer id='contact' className='min-h-screen bg-[#FFFFFF] pt-5 md:pt-24 '>
