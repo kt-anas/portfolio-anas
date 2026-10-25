@@ -168,18 +168,19 @@ export default function ContactPage() {
                         <button
                             type="button"
                             onClick={handleCopyEmail}
-                            className="group inline-flex items-center gap-2 text-[11px] sm:text-[13px] tracking-[0.22em] uppercase font-medium text-black/70 hover:text-black transition-colors cursor-pointer"
+                            className="group relative inline-flex items-center text-[11px] sm:text-[13px] tracking-[0.22em] uppercase font-medium text-black/70 hover:text-black transition-colors cursor-pointer"
                             title="Click to copy email"
                         >
                             <span>{emailAddress.toUpperCase()}</span>
+
                             {copiedEmail ? (
-                                <span className="inline-flex items-center text-[10px] lowercase tracking-normal text-emerald-600 font-semibold gap-1">
+                                <span className="absolute left-full ml-2 inline-flex items-center gap-1 whitespace-nowrap text-[10px] lowercase tracking-normal text-emerald-600 font-semibold">
                                     <CheckCheck size={13} /> copied!
                                 </span>
                             ) : (
                                 <Copy
                                     size={12}
-                                    className="opacity-0 -translate-x-1 group-hover:opacity-60 group-hover:translate-x-0 transition-all duration-200"
+                                    className="absolute left-full ml-2 opacity-0 translate-x-1 group-hover:opacity-60 group-hover:translate-x-0 transition-all duration-200 pointer-events-none"
                                 />
                             )}
                         </button>
