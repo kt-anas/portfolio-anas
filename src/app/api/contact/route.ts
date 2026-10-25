@@ -6,8 +6,8 @@ export async function POST(req: Request) {
 
         const accessKey =
             process.env.WEB3FORMS_ACCESS_KEY ||
-            process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ||
-            "f6de184d-928e-4220-b2f9-20cf69e89ae3";
+            process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
 
         if (!accessKey) {
             return NextResponse.json(
